@@ -1,0 +1,2993 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="description"
+        content="Dream Solutions - Professional Event Management Company in Mysore, India. Turning Moments into Memories since 2016.">
+    <title>Dream Solutions | Event Management Mysore</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Dancing+Script:wght@600&display=swap');
+
+        /* ===== CSS VARIABLES & THEMES ===== */
+        :root {
+            --bg: #0a0a0f;
+            --bg2: #12121a;
+            --card: #1a1a24;
+            --card2: #22222e;
+            --accent: #c9a96e;
+            --accent2: #e8c88a;
+            --text: #f0ede8;
+            --text2: #a09890;
+            --text3: #6a6560;
+            --border: rgba(201, 169, 110, 0.18);
+            --shadow: rgba(0, 0, 0, 0.5);
+            --nav-bg: rgba(10, 10, 15, 0.85);
+            --nav-bg-solid: rgba(10, 10, 15, 0.97);
+            --hero-overlay: rgba(0, 0, 0, 0.55);
+            --radius: 12px;
+            --radius-lg: 20px;
+            --transition: 0.3s ease;
+        }
+
+        [data-theme="light"] {
+            --bg: #faf9f7;
+            --bg2: #f0ede8;
+            --card: #ffffff;
+            --card2: #f5f3ef;
+            --accent: #b8892a;
+            --accent2: #d4a843;
+            --text: #1a1814;
+            --text2: #5a5550;
+            --text3: #9a9590;
+            --border: rgba(184, 137, 42, 0.2);
+            --shadow: rgba(0, 0, 0, 0.12);
+            --nav-bg: rgba(250, 249, 247, 0.88);
+            --nav-bg-solid: rgba(250, 249, 247, 0.98);
+            --hero-overlay: rgba(0, 0, 0, 0.4);
+        }
+
+        [data-theme="lgbt"] {
+            --bg: #0d0a14;
+            --bg2: #150f20;
+            --card: #1e1530;
+            --card2: #261b3a;
+            --accent: #e879f9;
+            --accent2: #c026d3;
+            --text: #f5f0ff;
+            --text2: #b0a0c8;
+            --text3: #7060a0;
+            --border: rgba(232, 121, 249, 0.2);
+            --shadow: rgba(0, 0, 0, 0.55);
+            --nav-bg: rgba(13, 10, 20, 0.88);
+            --nav-bg-solid: rgba(13, 10, 20, 0.97);
+            --hero-overlay: rgba(0, 0, 0, 0.5);
+        }
+
+        /* ===== RESET & BASE ===== */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            transition: background var(--transition), color var(--transition);
+            padding-bottom: 0;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            cursor: pointer;
+            border: none;
+            background: none;
+            font-family: inherit;
+        }
+
+        input,
+        select,
+        textarea {
+            font-family: inherit;
+            font-size: 16px;
+            color: var(--text);
+            background: var(--card2);
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius);
+            padding: 12px 16px;
+            width: 100%;
+            transition: border-color var(--transition), background var(--transition);
+            outline: none;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: var(--accent);
+        }
+
+        select option {
+            background: var(--card);
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(201, 169, 110, 0.12);
+            border: 1px solid var(--border);
+            color: var(--accent);
+            padding: 6px 14px;
+            border-radius: 99px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+
+        [data-theme="lgbt"] .section-badge {
+            background: rgba(232, 121, 249, 0.12);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 16px;
+            color: var(--text);
+        }
+
+        .section-sub {
+            color: var(--text2);
+            font-size: 1.05rem;
+            max-width: 580px;
+        }
+
+        .accent {
+            color: var(--accent);
+        }
+
+        [data-theme="lgbt"] .accent {
+            background: linear-gradient(90deg, #f472b6, #e879f9, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 13px 28px;
+            border-radius: 99px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: all var(--transition);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: #1a1200;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent2);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(201, 169, 110, 0.35);
+        }
+
+        [data-theme="lgbt"] .btn-primary {
+            background: linear-gradient(135deg, #e879f9, #a855f7);
+            color: #fff;
+        }
+
+        [data-theme="lgbt"] .btn-primary:hover {
+            box-shadow: 0 8px 24px rgba(168, 85, 247, 0.45);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text);
+            border: 2px solid var(--border);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== NAVBAR ===== */
+        #navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: transparent;
+            transition: background var(--transition), box-shadow var(--transition), backdrop-filter var(--transition);
+        }
+
+        #navbar.scrolled {
+            background: var(--nav-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-shadow: 0 2px 20px var(--shadow);
+        }
+
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 24px;
+            height: 68px;
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text);
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .nav-logo .logo-star {
+            color: var(--accent);
+            font-size: 1.1rem;
+        }
+
+        .nav-ul {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            list-style: none;
+            flex: 1;
+            justify-content: center;
+        }
+
+        .nav-ul a {
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text2);
+            transition: color var(--transition), background var(--transition);
+        }
+
+        .nav-ul a:hover {
+            color: var(--accent);
+            background: rgba(201, 169, 110, 0.08);
+        }
+
+        [data-theme="lgbt"] .nav-ul a:hover {
+            color: var(--accent);
+            background: rgba(232, 121, 249, 0.08);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-shrink: 0;
+        }
+
+        /* Theme toggle pill */
+        .theme-pill {
+            display: flex;
+            align-items: center;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 99px;
+            padding: 4px;
+            gap: 2px;
+        }
+
+        .th-ico-btn {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text2);
+            transition: all var(--transition);
+            background: transparent;
+        }
+
+        .th-ico-btn:hover {
+            color: var(--text);
+        }
+
+        .th-ico-btn.on {
+            background: var(--bg);
+            color: var(--accent);
+            box-shadow: 0 2px 8px var(--shadow);
+        }
+
+        [data-theme="light"] .th-ico-btn.on {
+            background: #fff;
+        }
+
+        [data-theme="lgbt"] .th-ico-btn.on {
+            color: var(--accent);
+        }
+
+        /* WhatsApp nav button */
+        .nav-wa {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            padding: 8px 16px;
+            border-radius: 99px;
+            border: 2px solid #25d366;
+            color: #25d366;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all var(--transition);
+        }
+
+        .nav-wa:hover {
+            background: #25d36618;
+        }
+
+        /* Call nav button */
+        .nav-call {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            padding: 8px 18px;
+            border-radius: 99px;
+            background: #e53935;
+            color: #fff;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all var(--transition);
+        }
+
+        .nav-call:hover {
+            background: #c62828;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 14px rgba(229, 57, 53, 0.4);
+        }
+
+        /* Hamburger */
+        .hbg {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            width: 36px;
+            height: 36px;
+            padding: 4px;
+            border-radius: 8px;
+            transition: background var(--transition);
+        }
+
+        .hbg:hover {
+            background: var(--card2);
+        }
+
+        .hbg span {
+            display: block;
+            height: 2px;
+            border-radius: 2px;
+            background: var(--text);
+            transition: all var(--transition);
+        }
+
+        .hbg.open span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        .hbg.open span:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+
+        .hbg.open span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        /* ===== FLOATING SOCIAL BAR ===== */
+        .float-social {
+            position: fixed;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 900;
+        }
+
+        .float-btn {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transition: transform var(--transition), box-shadow var(--transition);
+            flex-shrink: 0;
+        }
+
+        .float-btn:hover {
+            transform: scale(1.12);
+        }
+
+        .float-btn .float-label {
+            position: absolute;
+            right: 58px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--card);
+            color: var(--text);
+            padding: 5px 12px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            white-space: nowrap;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity var(--transition);
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 12px var(--shadow);
+        }
+
+        .float-btn:hover .float-label {
+            opacity: 1;
+        }
+
+        .float-wa {
+            background: linear-gradient(135deg, #128C7E, #25D366);
+            box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+        }
+
+        .float-call {
+            background: linear-gradient(135deg, #1565c0, #42a5f5);
+            box-shadow: 0 4px 16px rgba(66, 165, 245, 0.4);
+        }
+
+        .float-ig {
+            background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+            box-shadow: 0 4px 16px rgba(253, 29, 29, 0.4);
+        }
+
+        .float-em {
+            background: linear-gradient(135deg, #c62828, #ef5350);
+            box-shadow: 0 4px 16px rgba(239, 83, 80, 0.4);
+        }
+
+        /* ===== HERO ===== */
+        #hero {
+            min-height: 100vh;
+            min-height: calc(var(--vh, 1vh)*100);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background-image: url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1600&auto=format&fit=crop&q=80');
+            background-size: cover;
+            background-position: center;
+            transform: scale(1.05);
+            transition: transform 0.1s linear;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: var(--hero-overlay);
+        }
+
+        [data-theme="lgbt"] .hero-overlay {
+            background: linear-gradient(135deg, rgba(13, 10, 20, 0.7), rgba(88, 28, 135, 0.5));
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 0 24px;
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(201, 169, 110, 0.15);
+            border: 1px solid rgba(201, 169, 110, 0.35);
+            color: var(--accent);
+            padding: 8px 18px;
+            border-radius: 99px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            backdrop-filter: blur(8px);
+            animation: fadeInDown 0.8s ease both;
+        }
+
+        [data-theme="lgbt"] .hero-badge {
+            background: rgba(232, 121, 249, 0.15);
+            border-color: rgba(232, 121, 249, 0.35);
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.6rem, 8vw, 5.5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            color: #fff;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+            animation: fadeInUp 0.9s ease 0.2s both;
+        }
+
+        .hero-sub {
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            color: rgba(255, 255, 255, 0.82);
+            max-width: 580px;
+            margin: 0 auto 32px;
+            animation: fadeInUp 0.9s ease 0.4s both;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 52px;
+            animation: fadeInUp 0.9s ease 0.6s both;
+        }
+
+        .hero-btns .btn-outline {
+            border-color: rgba(255, 255, 255, 0.5);
+            color: #fff;
+        }
+
+        .hero-btns .btn-outline:hover {
+            border-color: #fff;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.9s ease 0.8s both;
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat-num {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 700;
+            color: var(--accent);
+            line-height: 1;
+        }
+
+        .hero-stat-lbl {
+            font-size: 0.82rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 4px;
+            letter-spacing: 0.05em;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== ABOUT ===== */
+        #about {
+            background: var(--bg2);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-imgs {
+            position: relative;
+            height: 480px;
+        }
+
+        .about-img-main {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 75%;
+            height: 85%;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: 0 20px 60px var(--shadow);
+        }
+
+        .about-img-main img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-img-sec {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 55%;
+            height: 55%;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: 0 20px 40px var(--shadow);
+            border: 4px solid var(--bg2);
+        }
+
+        .about-img-sec img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-badge-float {
+            position: absolute;
+            top: 30px;
+            right: 0;
+            background: var(--accent);
+            color: #1a1200;
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            box-shadow: 0 8px 30px rgba(201, 169, 110, 0.5);
+            z-index: 10;
+        }
+
+        [data-theme="lgbt"] .about-badge-float {
+            background: linear-gradient(135deg, #e879f9, #a855f7);
+            color: #fff;
+            box-shadow: 0 8px 30px rgba(168, 85, 247, 0.5);
+        }
+
+        .about-badge-float .ab-num {
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+
+        .about-badge-float .ab-txt {
+            font-size: 0.65rem;
+            text-align: center;
+            line-height: 1.3;
+            margin-top: 2px;
+        }
+
+        .about-text {}
+
+        .about-text p {
+            color: var(--text2);
+            margin-bottom: 16px;
+            line-height: 1.8;
+        }
+
+        .about-features {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin: 24px 0 32px;
+        }
+
+        .about-feat {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--text);
+            font-size: 0.95rem;
+        }
+
+        .about-feat svg {
+            color: var(--accent);
+            flex-shrink: 0;
+        }
+
+        /* ===== SERVICES ===== */
+        #services {}
+
+        .services-header {
+            text-align: center;
+            margin-bottom: 52px;
+        }
+
+        .services-header .section-sub {
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .svc-card {
+            background: var(--card);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: transform var(--transition), box-shadow var(--transition);
+        }
+
+        .svc-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 50px var(--shadow);
+        }
+
+        .svc-img {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .svc-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .svc-card:hover .svc-img img {
+            transform: scale(1.06);
+        }
+
+        .svc-icon-wrap {
+            position: absolute;
+            bottom: -20px;
+            left: 20px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: #1a1200;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 16px rgba(201, 169, 110, 0.4);
+        }
+
+        [data-theme="lgbt"] .svc-icon-wrap {
+            background: linear-gradient(135deg, #e879f9, #a855f7);
+            color: #fff;
+            box-shadow: 0 4px 16px rgba(168, 85, 247, 0.4);
+        }
+
+        .svc-body {
+            padding: 32px 20px 24px;
+        }
+
+        .svc-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+
+        .svc-desc {
+            color: var(--text2);
+            font-size: 0.88rem;
+            line-height: 1.7;
+        }
+
+        /* ===== WHY US ===== */
+        #whyus {
+            background: var(--bg2);
+        }
+
+        .whyus-inner {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .why-card {
+            background: var(--card);
+            border-radius: var(--radius-lg);
+            padding: 32px 24px;
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: transform var(--transition), box-shadow var(--transition);
+        }
+
+        .why-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 40px var(--shadow);
+        }
+
+        .why-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(201, 169, 110, 0.12);
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 18px;
+            transition: background var(--transition);
+        }
+
+        .why-card:hover .why-icon {
+            background: var(--accent);
+            color: #1a1200;
+        }
+
+        [data-theme="lgbt"] .why-icon {
+            background: rgba(232, 121, 249, 0.12);
+            color: var(--accent);
+        }
+
+        [data-theme="lgbt"] .why-card:hover .why-icon {
+            background: linear-gradient(135deg, #e879f9, #a855f7);
+            color: #fff;
+        }
+
+        .why-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+
+        .why-desc {
+            color: var(--text2);
+            font-size: 0.87rem;
+            line-height: 1.6;
+        }
+
+        /* ===== GALLERY ===== */
+        #gallery {}
+
+        .gallery-header {
+            text-align: center;
+            margin-bottom: 36px;
+        }
+
+        .gallery-filters {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 32px;
+        }
+
+        .gal-filter {
+            padding: 8px 20px;
+            border-radius: 99px;
+            font-size: 0.87rem;
+            font-weight: 600;
+            background: var(--card);
+            color: var(--text2);
+            border: 1.5px solid var(--border);
+            transition: all var(--transition);
+        }
+
+        .gal-filter:hover,
+        .gal-filter.active {
+            background: var(--accent);
+            color: #1a1200;
+            border-color: var(--accent);
+        }
+
+        [data-theme="lgbt"] .gal-filter:hover,
+        [data-theme="lgbt"] .gal-filter.active {
+            background: linear-gradient(135deg, #e879f9, #a855f7);
+            color: #fff;
+            border-color: transparent;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: 220px;
+            gap: 14px;
+        }
+
+        .gal-item {
+            border-radius: var(--radius);
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: transform var(--transition), box-shadow var(--transition);
+        }
+
+        .gal-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 36px var(--shadow);
+        }
+
+        .gal-item.tall {
+            grid-row: span 2;
+        }
+
+        .gal-item.wide {
+            grid-column: span 2;
+        }
+
+        .gal-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gal-item:hover img {
+            transform: scale(1.07);
+        }
+
+        .gal-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.55), transparent);
+            opacity: 0;
+            transition: opacity var(--transition);
+            display: flex;
+            align-items: flex-end;
+            padding: 16px;
+        }
+
+        .gal-item:hover .gal-overlay {
+            opacity: 1;
+        }
+
+        .gal-tag {
+            background: var(--accent);
+            color: #1a1200;
+            padding: 4px 12px;
+            border-radius: 99px;
+            font-size: 0.76rem;
+            font-weight: 700;
+        }
+
+        [data-theme="lgbt"] .gal-tag {
+            background: linear-gradient(135deg, #e879f9, #a855f7);
+            color: #fff;
+        }
+
+        /* ===== TESTIMONIALS ===== */
+        #testimonials {
+            background: var(--bg2);
+            overflow: hidden;
+        }
+
+        .testi-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .testi-track-wrap {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .testi-track {
+            display: flex;
+            gap: 24px;
+            transition: transform 0.4s ease;
+            will-change: transform;
+        }
+
+        .testi-card {
+            background: var(--card);
+            border-radius: var(--radius-lg);
+            padding: 28px;
+            min-width: 320px;
+            border: 1px solid var(--border);
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .testi-quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            line-height: 1;
+            color: var(--accent);
+            opacity: 0.4;
+            margin-bottom: -8px;
+        }
+
+        .testi-text {
+            color: var(--text2);
+            font-size: 0.93rem;
+            line-height: 1.75;
+            margin-bottom: 20px;
+        }
+
+        .testi-stars {
+            display: flex;
+            gap: 3px;
+            margin-bottom: 16px;
+        }
+
+        .testi-stars svg {
+            color: #f59e0b;
+        }
+
+        .testi-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .testi-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: #1a1200;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        [data-theme="lgbt"] .testi-avatar {
+            background: linear-gradient(135deg, #e879f9, #a855f7);
+            color: #fff;
+        }
+
+        .testi-name {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text);
+        }
+
+        .testi-event {
+            color: var(--text2);
+            font-size: 0.8rem;
+        }
+
+        .testi-nav {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin-top: 28px;
+        }
+
+        .testi-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--card);
+            border: 1.5px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text2);
+            transition: all var(--transition);
+        }
+
+        .testi-btn:hover {
+            background: var(--accent);
+            color: #1a1200;
+            border-color: var(--accent);
+        }
+
+        [data-theme="lgbt"] .testi-btn:hover {
+            background: var(--accent);
+            color: #fff;
+            border-color: var(--accent);
+        }
+
+        /* ===== ENQUIRY FORM ===== */
+        #enquiry {
+            background: var(--bg);
+        }
+
+        .enquiry-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.4fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .enquiry-info {}
+
+        .enquiry-info h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--text);
+        }
+
+        .enquiry-info p {
+            color: var(--text2);
+            line-height: 1.8;
+            margin-bottom: 28px;
+        }
+
+        .enq-contact-items {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .enq-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            color: var(--text2);
+            font-size: 0.93rem;
+        }
+
+        .enq-contact-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(201, 169, 110, 0.1);
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        [data-theme="lgbt"] .enq-contact-icon {
+            background: rgba(232, 121, 249, 0.1);
+        }
+
+        .enquiry-form-wrap {
+            background: var(--card);
+            border-radius: var(--radius-lg);
+            padding: 36px;
+            border: 1px solid var(--border);
+            box-shadow: 0 8px 40px var(--shadow);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.87rem;
+            font-weight: 600;
+            color: var(--text2);
+            margin-bottom: 7px;
+        }
+
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 24px;
+            color: #22c55e;
+            font-size: 1.05rem;
+            font-weight: 600;
+        }
+
+        .form-success svg {
+            margin: 0 auto 12px;
+            display: block;
+        }
+
+        /* ===== CONTACT & MAP ===== */
+        #contact {
+            background: var(--bg2);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: start;
+        }
+
+        .map-wrap {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            height: 400px;
+            border: 1px solid var(--border);
+            box-shadow: 0 8px 32px var(--shadow);
+        }
+
+        .map-wrap iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .contact-details {}
+
+        .contact-details h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.9rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+
+        .contact-details p {
+            color: var(--text2);
+            margin-bottom: 28px;
+        }
+
+        .contact-items {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            margin-bottom: 32px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+        }
+
+        .c-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(201, 169, 110, 0.1);
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        [data-theme="lgbt"] .c-icon {
+            background: rgba(232, 121, 249, 0.1);
+        }
+
+        .c-label {
+            font-size: 0.78rem;
+            color: var(--text3);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 2px;
+        }
+
+        .c-val {
+            font-size: 0.95rem;
+            color: var(--text);
+        }
+
+        .c-val a {
+            color: var(--accent);
+        }
+
+        .social-row {
+            display: flex;
+            gap: 12px;
+        }
+
+        .soc-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1.5px solid var(--border);
+            color: var(--text2);
+            transition: all var(--transition);
+        }
+
+        .soc-btn:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: rgba(201, 169, 110, 0.08);
+        }
+
+        [data-theme="lgbt"] .soc-btn:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: rgba(232, 121, 249, 0.08);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--bg);
+            border-top: 1px solid var(--border);
+            padding: 60px 0 32px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+            gap: 40px;
+            margin-bottom: 48px;
+        }
+
+        .footer-brand {}
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 12px;
+        }
+
+        .footer-logo .logo-star {
+            color: var(--accent);
+        }
+
+        .footer-brand p {
+            color: var(--text2);
+            font-size: 0.88rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 10px;
+        }
+
+        .footer-soc {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: var(--card);
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text2);
+            transition: all var(--transition);
+        }
+
+        .footer-soc:hover {
+            background: var(--accent);
+            color: #1a1200;
+            border-color: var(--accent);
+        }
+
+        [data-theme="lgbt"] .footer-soc:hover {
+            background: var(--accent);
+            color: #fff;
+            border-color: transparent;
+        }
+
+        .footer-col h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 18px;
+            color: var(--text);
+        }
+
+        font-weight: 700;
+        margin-bottom: 18px;
+        color: var(--text);
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-links a {
+            color: var(--text2);
+            font-size: 0.88rem;
+            transition: color var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            color: var(--text3);
+            font-size: 0.83rem;
+        }
+
+        /* ===== RESPONSIVE ===== */
+
+        /* Mobile menu always hidden by default — only shown on mobile when open */
+        .nav-mobile-menu {
+            display: none;
+        }
+
+        @media (max-width: 1024px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .whyus-inner {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .about-grid {
+                gap: 36px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 56px 0;
+            }
+
+            .nav-ul,
+            .nav-wa,
+            .nav-call {
+                display: none;
+            }
+
+            .hbg {
+                display: flex;
+            }
+
+            #navbar {
+                background: var(--nav-bg-solid) !important;
+                backdrop-filter: blur(16px);
+                -webkit-backdrop-filter: blur(16px);
+            }
+
+            .nav-mobile-menu {
+                display: none;
+                position: absolute;
+                top: 68px;
+                left: 0;
+                right: 0;
+                background: var(--nav-bg-solid);
+                backdrop-filter: blur(16px);
+                border-bottom: 1px solid var(--border);
+                padding: 8px 0 16px;
+                flex-direction: column;
+            }
+
+            .nav-mobile-menu.open {
+                display: flex;
+            }
+
+            .nav-mobile-menu a {
+                display: block;
+                padding: 12px 24px;
+                color: var(--text2);
+                font-size: 0.97rem;
+                font-weight: 500;
+                border-bottom: 1px solid var(--border);
+                transition: color var(--transition), background var(--transition);
+            }
+
+            .nav-mobile-menu a:last-child {
+                border-bottom: none;
+            }
+
+            .nav-mobile-menu a:hover {
+                color: var(--accent);
+                background: rgba(201, 169, 110, 0.06);
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-imgs {
+                height: 320px;
+                margin-bottom: 0;
+            }
+
+            .about-img-sec {
+                width: 48%;
+                height: 48%;
+            }
+
+            .about-badge-float {
+                width: 74px;
+                height: 74px;
+                right: -10px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .whyus-inner {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-auto-rows: 180px;
+            }
+
+            .gal-item.wide {
+                grid-column: span 1;
+            }
+
+            .testi-card {
+                min-width: 280px;
+            }
+
+            .enquiry-grid {
+                grid-template-columns: 1fr;
+                gap: 36px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 28px;
+            }
+
+            .float-btn {
+                width: 42px;
+                height: 42px;
+            }
+
+            .float-btn .float-label {
+                display: none;
+            }
+
+            .hero-stats {
+                gap: 24px;
+            }
+
+            .hero-btns {
+                gap: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 16px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                grid-auto-rows: 220px;
+            }
+
+            .gal-item.tall {
+                grid-row: span 1;
+            }
+
+            .whyus-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-stats {
+                gap: 16px;
+            }
+
+            .about-imgs {
+                height: 260px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav id="navbar">
+        <div class="nav-inner">
+            <!-- Logo -->
+            <a href="#hero" class="nav-logo">
+                <span class="logo-star">✦</span>
+                Dream Solutions
+            </a>
+
+            <!-- Desktop nav links -->
+            <ul class="nav-ul">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <!-- Right side controls -->
+            <div class="nav-right">
+                <!-- Theme toggle pill -->
+                <div class="theme-pill" aria-label="Theme selector">
+                    <button class="th-ico-btn on" id="btn-dark" onclick="setTheme('dark')" title="Dark theme"
+                        aria-label="Dark theme">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                        </svg>
+                    </button>
+                    <button class="th-ico-btn" id="btn-light" onclick="setTheme('light')" title="Light theme"
+                        aria-label="Light theme">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round">
+                            <circle cx="12" cy="12" r="5" />
+                            <line x1="12" y1="1" x2="12" y2="3" />
+                            <line x1="12" y1="21" x2="12" y2="23" />
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                            <line x1="1" y1="12" x2="3" y2="12" />
+                            <line x1="21" y1="12" x2="23" y2="12" />
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                        </svg>
+                    </button>
+                    <button class="th-ico-btn" id="btn-lgbt" onclick="setTheme('lgbt')" title="Pride theme"
+                        aria-label="Pride theme">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 3a9 9 0 1 0 0 18A9 9 0 0 0 12 3zm0 2a7 7 0 0 1 5.32 11.54l-9.86-9.86A6.97 6.97 0 0 1 12 5zm-5.32 2.46 9.86 9.86A7 7 0 0 1 4.68 7.46z" />
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- WhatsApp button (desktop) -->
+                <a href="https://wa.me/919066906052" class="nav-wa" target="_blank" rel="noopener"
+                    aria-label="WhatsApp">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                        <path
+                            d="M12 0C5.373 0 0 5.373 0 12c0 2.126.554 4.118 1.523 5.851L0 24l6.335-1.491A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.645-.52-5.148-1.422l-.369-.219-3.76.886.925-3.67-.24-.38A9.947 9.947 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
+                    </svg>
+                    WhatsApp
+                </a>
+
+                <!-- Call button (desktop) -->
+                <a href="tel:+919066906052" class="nav-call" aria-label="Call us">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" />
+                    </svg>
+                    Call Now
+                </a>
+
+                <!-- Hamburger (mobile) -->
+                <button class="hbg" id="hbg" onclick="toggleMenu()" aria-label="Toggle menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile dropdown menu -->
+        <div class="nav-mobile-menu" id="mobile-menu" role="navigation">
+            <a href="#hero" onclick="closeMenu()">Home</a>
+            <a href="#about" onclick="closeMenu()">About</a>
+            <a href="#services" onclick="closeMenu()">Services</a>
+            <a href="#gallery" onclick="closeMenu()">Gallery</a>
+            <a href="#testimonials" onclick="closeMenu()">Reviews</a>
+            <a href="#enquiry" onclick="closeMenu()">Enquire</a>
+            <a href="#contact" onclick="closeMenu()">Contact</a>
+        </div>
+    </nav>
+
+    <!-- FLOATING SOCIAL BAR -->
+    <div class="float-social" role="complementary" aria-label="Quick contact">
+        <a href="https://wa.me/919066906052" class="float-btn float-wa" target="_blank" rel="noopener"
+            aria-label="WhatsApp">
+            <span class="float-label">WhatsApp</span>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="white">
+                <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                <path
+                    d="M12 0C5.373 0 0 5.373 0 12c0 2.126.554 4.118 1.523 5.851L0 24l6.335-1.491A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.645-.52-5.148-1.422l-.369-.219-3.76.886.925-3.67-.24-.38A9.947 9.947 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
+            </svg>
+        </a>
+        <a href="tel:+919066906052" class="float-btn float-call" aria-label="Call us">
+            <span class="float-label">Call Now</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                <path
+                    d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" />
+            </svg>
+        </a>
+        <a href="https://www.instagram.com/dreamsolutionsmysore/" class="float-btn float-ig" target="_blank"
+            rel="noopener" aria-label="Instagram">
+            <span class="float-label">Instagram</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+            </svg>
+        </a>
+        <a href="mailto:dreamsolutions@gmail.com" class="float-btn float-em" aria-label="Email us">
+            <span class="float-label">Email Us</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                <path
+                    d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+            </svg>
+        </a>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section id="hero">
+        <div class="hero-bg" id="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                </svg>
+                Mysore's Premier Event Company · Est. 2016
+            </div>
+            <h1 class="hero-title">
+                Turning Moments<br>
+                <span style="color:var(--accent); -webkit-text-fill-color:var(--accent);">into Memories</span>
+            </h1>
+            <p class="hero-sub">
+                Dream Solutions brings your vision to life — from intimate weddings to grand corporate galas. Every
+                detail crafted with love in Mysore.
+            </p>
+            <div class="hero-btns">
+                <a href="#enquiry" class="btn btn-primary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                    </svg>
+                    Plan Your Event
+                </a>
+                <a href="#services" class="btn btn-outline">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z" />
+                    </svg>
+                    Explore Services
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-num">500+</div>
+                    <div class="hero-stat-lbl">Events Done</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-num">8+</div>
+                    <div class="hero-stat-lbl">Years Experience</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-num">98%</div>
+                    <div class="hero-stat-lbl">Happy Clients</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about">
+        <div class="container">
+            <div class="about-grid">
+                <!-- Images -->
+                <div class="about-imgs reveal">
+                    <div class="about-img-main">
+                        <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=700&auto=format&fit=crop&q=80"
+                            alt="Dream Solutions event planning" loading="lazy">
+                    </div>
+                    <div class="about-img-sec">
+                        <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=400&auto=format&fit=crop&q=80"
+                            alt="Beautiful event decor" loading="lazy">
+                    </div>
+                    <div class="about-badge-float">
+                        <div class="ab-num">8+</div>
+                        <div class="ab-txt">Years of Excellence</div>
+                    </div>
+                </div>
+
+                <!-- Text -->
+                <div class="about-text reveal">
+                    <div class="section-badge">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                        </svg>
+                        About Us
+                    </div>
+                    <h2 class="section-title">We Create Unforgettable <span class="accent">Experiences</span></h2>
+                    <p>Founded in 2016, Dream Solutions has been Mysore's trusted name for transforming visions into
+                        spectacular realities. We handle every aspect of your event with meticulous attention to detail.
+                    </p>
+                    <p>From intimate birthday parties to grand wedding receptions and professional corporate events, our
+                        experienced team ensures every moment is perfect, every detail is flawless.</p>
+                    <div class="about-features">
+                        <div class="about-feat">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5l-4-4 1.41-1.41L10 13.67l6.59-6.58L18 8.5l-8 8z" />
+                            </svg>
+                            <span>500+ successful events across Mysore & Karnataka</span>
+                        </div>
+                        <div class="about-feat">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5l-4-4 1.41-1.41L10 13.67l6.59-6.58L18 8.5l-8 8z" />
+                            </svg>
+                            <span>Dedicated team of 25+ event professionals</span>
+                        </div>
+                        <div class="about-feat">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5l-4-4 1.41-1.41L10 13.67l6.59-6.58L18 8.5l-8 8z" />
+                            </svg>
+                            <span>Custom packages for every budget</span>
+                        </div>
+                        <div class="about-feat">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5l-4-4 1.41-1.41L10 13.67l6.59-6.58L18 8.5l-8 8z" />
+                            </svg>
+                            <span>24/7 support before, during & after your event</span>
+                        </div>
+                    </div>
+                    <a href="#enquiry" class="btn btn-primary">
+                        Start Planning
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services">
+        <div class="container">
+            <div class="services-header">
+                <div class="section-badge">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M20 6h-2.18c.07-.44.18-.88.18-1.36C18 2.99 16.64 2 15 2h-6C7.36 2 6 2.99 6 4.64c0 .48.11.92.18 1.36H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zM9 4.64C9 4.39 9.56 4 10 4h4c.44 0 1 .39 1 .64 0 .37-.1.72-.18 1.36H9.18C9.1 5.36 9 5.01 9 4.64zM20 19H4V8h16v11z" />
+                    </svg>
+                    What We Offer
+                </div>
+                <h2 class="section-title">Our <span class="accent">Services</span></h2>
+                <p class="section-sub">Comprehensive event management solutions tailored to make your special occasions
+                    truly extraordinary.</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Wedding Planning -->
+                <div class="svc-card reveal">
+                    <div class="svc-img">
+                        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600&auto=format&fit=crop&q=80"
+                            alt="Wedding Planning" loading="lazy">
+                        <div class="svc-icon-wrap">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="svc-body">
+                        <div class="svc-title">Wedding Planning</div>
+                        <p class="svc-desc">Complete wedding management from engagement to reception. We handle venues,
+                            décor, catering, photography, and every tiny detail.</p>
+                    </div>
+                </div>
+
+                <!-- Corporate Events -->
+                <div class="svc-card reveal">
+                    <div class="svc-img">
+                        <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=600&auto=format&fit=crop&q=80"
+                            alt="Corporate Events" loading="lazy">
+                        <div class="svc-icon-wrap">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M20 6h-2.18c.07-.44.18-.88.18-1.36C18 2.99 16.64 2 15 2h-6C7.36 2 6 2.99 6 4.64c0 .48.11.92.18 1.36H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zM20 19H4V8h16v11z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="svc-body">
+                        <div class="svc-title">Corporate Events</div>
+                        <p class="svc-desc">Professional conferences, product launches, team-building, annual meets and
+                            award ceremonies managed with precision.</p>
+                    </div>
+                </div>
+
+                <!-- Birthday Celebrations -->
+                <div class="svc-card reveal">
+                    <div class="svc-img">
+                        <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&auto=format&fit=crop&q=80"
+                            alt="Birthday Celebrations" loading="lazy">
+                        <div class="svc-icon-wrap">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 6c1.11 0 2-.89 2-2 0-.38-.1-.73-.29-1.03L12 0l-1.71 2.97c-.19.3-.29.65-.29 1.03 0 1.11.9 2 2 2zm4.6 9.99l-1.07-1.07-1.08 1.07c-1.3 1.3-3.58 1.31-4.89 0l-1.07-1.07-1.09 1.07C6.75 17.27 5.96 17.5 5 17.5v1.5c1.25 0 2.41-.44 3.29-1.21l.29-.26.29.26C9.56 18.56 10.73 19 12 19s2.44-.44 3.21-1.21l.29-.26.29.26C16.59 18.56 17.75 19 19 19v-1.5c-.96 0-1.75-.23-2.4-.51zM5 9v3h2v-2h10v2h2V9H5z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="svc-body">
+                        <div class="svc-title">Birthday Celebrations</div>
+                        <p class="svc-desc">From kids' magical birthday bashes to milestone adult parties — we craft
+                            personalised experiences full of joy and wonder.</p>
+                    </div>
+                </div>
+
+                <!-- Social Gatherings -->
+                <div class="svc-card reveal">
+                    <div class="svc-img">
+                        <img src="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=600&auto=format&fit=crop&q=80"
+                            alt="Social Gatherings" loading="lazy">
+                        <div class="svc-icon-wrap">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 3l1.09 3.35H16.5l-2.77 2.01 1.06 3.26L12 9.62l-2.79 2 1.06-3.26L7.5 6.35h3.41L12 3zm0 11c-2.21 0-4 1.79-4 4h8c0-2.21-1.79-4-4-4z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="svc-body">
+                        <div class="svc-title">Social Gatherings</div>
+                        <p class="svc-desc">Reunions, anniversaries, engagement parties and cultural celebrations
+                            curated with warmth and traditional elegance.</p>
+                    </div>
+                </div>
+
+                <!-- Theme Decoration -->
+                <div class="svc-card reveal">
+                    <div class="svc-img">
+                        <img src="https://images.unsplash.com/photo-1478146059778-26028b07395a?w=600&auto=format&fit=crop&q=80"
+                            alt="Theme Decoration" loading="lazy">
+                        <div class="svc-icon-wrap">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M7.5 5.6L5 7 6.4 4.5 5 2l2.5 1.4L10 2 8.6 4.5 10 7 7.5 5.6zm12 9.8L22 14l-1.4 2.5L22 19l-2.5-1.4L17 19l1.4-2.5L17 14l2.5 1.4zM22 2l-1.4 2.5L22 7l-2.5-1.4L17 7l1.4-2.5L17 2l2.5 1.4L22 2zM13.34 12.78l-8.56-8.56-1.41 1.41 8.56 8.56 1.41-1.41z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="svc-body">
+                        <div class="svc-title">Theme Decoration</div>
+                        <p class="svc-desc">Stunning themed setups — floral arrangements, lighting design, backdrop
+                            installations and complete venue transformation.</p>
+                    </div>
+                </div>
+
+                <!-- Entertainment & Shows -->
+                <div class="svc-card reveal">
+                    <div class="svc-img">
+                        <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&auto=format&fit=crop&q=80"
+                            alt="Entertainment & Shows" loading="lazy">
+                        <div class="svc-icon-wrap">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.49 6-3.31 6-6.72h-1.7z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="svc-body">
+                        <div class="svc-title">Entertainment & Shows</div>
+                        <p class="svc-desc">Live music, DJ setups, cultural performances, anchor services, and complete
+                            AV production for any scale of event.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY US SECTION -->
+    <section id="whyus">
+        <div class="container">
+            <div style="text-align:center; margin-bottom:48px;">
+                <div class="section-badge">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                    </svg>
+                    Why Choose Us
+                </div>
+                <h2 class="section-title">The Dream Solutions <span class="accent">Difference</span></h2>
+                <p class="section-sub" style="margin: 0 auto;">We go beyond event management to become your trusted
+                    partner in creating lifelong memories.</p>
+            </div>
+            <div class="whyus-inner">
+                <div class="why-card reveal">
+                    <div class="why-icon">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                        </svg>
+                    </div>
+                    <div class="why-title">Premium Quality</div>
+                    <p class="why-desc">We work with the finest vendors, florists, caterers, and venues to ensure
+                        unmatched quality at every event.</p>
+                </div>
+                <div class="why-card reveal">
+                    <div class="why-icon">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5z" />
+                        </svg>
+                    </div>
+                    <div class="why-title">Always On Time</div>
+                    <p class="why-desc">Punctuality is our promise. Timelines are sacred — we ensure every element of
+                        your event runs on schedule.</p>
+                </div>
+                <div class="why-card reveal">
+                    <div class="why-icon">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M13.66 7c-.46-1.19-1.61-2-2.96-2H6V7h2.96l.01.01C9.5 7 9.96 7.4 9.99 8H6v2h3.99C9.73 10.69 9.03 11.3 8 11.5L6 11v2l6 6 1.5-1.5-4.51-4.51c2.08-.54 3.48-2.13 3.96-4h1.05V7h-1z" />
+                        </svg>
+                    </div>
+                    <div class="why-title">Budget Friendly</div>
+                    <p class="why-desc">Exceptional experiences without breaking the bank. Transparent pricing with no
+                        hidden costs — ever.</p>
+                </div>
+                <div class="why-card reveal">
+                    <div class="why-icon">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 1C7.03 1 3 5.03 3 10v7c0 1.66 1.34 3 3 3h1v-8H5v-2c0-3.87 3.13-7 7-7s7 3.13 7 7v2h-2v8h1c1.66 0 3-1.34 3-3v-7c0-6.97-5.03-10-10-10z" />
+                        </svg>
+                    </div>
+                    <div class="why-title">24/7 Support</div>
+                    <p class="why-desc">Our dedicated team is available round-the-clock — from first inquiry to last
+                        goodbye, we're always there for you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section id="gallery">
+        <div class="container">
+            <div class="gallery-header">
+                <div class="section-badge">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                    </svg>
+                    Our Work
+                </div>
+                <h2 class="section-title">Event <span class="accent">Gallery</span></h2>
+                <p class="section-sub" style="margin:0 auto;">A glimpse into the magical moments we've crafted across
+                    Mysore and Karnataka.</p>
+            </div>
+
+            <div class="gallery-filters">
+                <button class="gal-filter active" data-filter="all">All Events</button>
+                <button class="gal-filter" data-filter="weddings">Weddings</button>
+                <button class="gal-filter" data-filter="corporate">Corporate</button>
+                <button class="gal-filter" data-filter="birthdays">Birthdays</button>
+                <button class="gal-filter" data-filter="decor">Décor</button>
+            </div>
+
+            <div class="gallery-grid" id="gallery-grid">
+                <div class="gal-item tall" data-cat="weddings">
+                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600&auto=format&fit=crop&q=80"
+                        alt="Wedding ceremony" loading="lazy">
+                    <div class="gal-overlay"><span class="gal-tag">Wedding</span></div>
+                </div>
+                <div class="gal-item" data-cat="corporate">
+                    <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=600&auto=format&fit=crop&q=80"
+                        alt="Corporate event" loading="lazy">
+                    <div class="gal-overlay"><span class="gal-tag">Corporate</span></div>
+                </div>
+                <div class="gal-item" data-cat="birthdays">
+                    <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&auto=format&fit=crop&q=80"
+                        alt="Birthday celebration" loading="lazy">
+                    <div class="gal-overlay"><span class="gal-tag">Birthday</span></div>
+                </div>
+                <div class="gal-item" data-cat="decor">
+                    <img src="https://images.unsplash.com/photo-1478146059778-26028b07395a?w=600&auto=format&fit=crop&q=80"
+                        alt="Theme decoration" loading="lazy">
+                    <div class="gal-overlay"><span class="gal-tag">Décor</span></div>
+                </div>
+                <div class="gal-item wide" data-cat="weddings">
+                    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&auto=format&fit=crop&q=75"
+                        alt="Grand wedding hall" loading="lazy">
+                    <div class="gal-overlay"><span class="gal-tag">Wedding</span></div>
+                </div>
+                <div class="gal-item" data-cat="corporate">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&auto=format&fit=crop&q=75"
+                        alt="Conference setup" loading="lazy">
+                    <div class="gal-overlay"><span class="gal-tag">Corporate</span></div>
+                </div>
+                <div class="gal-item" data-cat="birthdays">
+                    <img src="https://images.unsplash.com/photo-1464349153735-7db50ed83c84?w=600&auto=format&fit=crop&q=75"
+                        alt="Party celebration" loading="lazy">
+                    <div class="gal-overlay"><span class="gal-tag">Birthday</span></div>
+                </div>
+                <div class="gal-item" data-cat="decor">
+                    <img src="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=600&auto=format&fit=crop&q=80"
+                        alt="Social gathering" loading="lazy">
+                    <div class="gal-overlay"><span class="gal-tag">Social</span></div>
+                </div>
+                <div class="gal-item" data-cat="weddings">
+                    <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&auto=format&fit=crop&q=80"
+                        alt="Entertainment show" loading="lazy">
+                    <div class="gal-overlay"><span class="gal-tag">Show</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section id="testimonials">
+        <div class="container">
+            <div class="testi-header">
+                <div class="section-badge">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                    </svg>
+                    Client Reviews
+                </div>
+                <h2 class="section-title">What Our Clients <span class="accent">Say</span></h2>
+                <p class="section-sub" style="margin:0 auto;">Real stories from families and companies who trusted Dream
+                    Solutions with their most important moments.</p>
+            </div>
+
+            <div class="testi-track-wrap" id="testi-wrap">
+                <div class="testi-track" id="testi-track">
+
+                    <div class="testi-card">
+                        <div class="testi-quote">"</div>
+                        <div class="testi-stars">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                        </div>
+                        <p class="testi-text">Dream Solutions made our wedding day absolutely magical. Every single
+                            detail was perfect — from the floral arrangements to the lighting. Our guests are still
+                            talking about it months later!</p>
+                        <div class="testi-author">
+                            <div class="testi-avatar">P</div>
+                            <div>
+                                <div class="testi-name">Priya & Rohan Sharma</div>
+                                <div class="testi-event">Wedding · November 2024</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testi-card">
+                        <div class="testi-quote">"</div>
+                        <div class="testi-stars">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                        </div>
+                        <p class="testi-text">We hired Dream Solutions for our company's annual conference in Mysore.
+                            300+ attendees, seamless execution, professional setup. The team's coordination was
+                            outstanding from start to finish.</p>
+                        <div class="testi-author">
+                            <div class="testi-avatar">A</div>
+                            <div>
+                                <div class="testi-name">Arun Krishnamurthy</div>
+                                <div class="testi-event">Corporate Conference · March 2024</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testi-card">
+                        <div class="testi-quote">"</div>
+                        <div class="testi-stars">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                        </div>
+                        <p class="testi-text">My daughter's 18th birthday was a dream come true! The floral décor, the
+                            photo booth, the DJ — everything exceeded our expectations. Dream Solutions really lives up
+                            to its name!</p>
+                        <div class="testi-author">
+                            <div class="testi-avatar">S</div>
+                            <div>
+                                <div class="testi-name">Sunitha Gowda</div>
+                                <div class="testi-event">Birthday Party · January 2025</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testi-card">
+                        <div class="testi-quote">"</div>
+                        <div class="testi-stars">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                        </div>
+                        <p class="testi-text">Our 25th anniversary celebration was intimate, romantic, and perfectly
+                            organised. The team went above and beyond — personalised touches everywhere. Truly a memory
+                            we will cherish forever.</p>
+                        <div class="testi-author">
+                            <div class="testi-avatar">V</div>
+                            <div>
+                                <div class="testi-name">Vijay & Meena Patel</div>
+                                <div class="testi-event">Anniversary · December 2024</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testi-card">
+                        <div class="testi-quote">"</div>
+                        <div class="testi-stars">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                        </div>
+                        <p class="testi-text">Hired Dream Solutions for our product launch event. 200 guests, live
+                            streaming, AV setup, catering — all handled flawlessly. Highly professional team. Will
+                            definitely work with them again!</p>
+                        <div class="testi-author">
+                            <div class="testi-avatar">R</div>
+                            <div>
+                                <div class="testi-name">Rahul Nagaraj</div>
+                                <div class="testi-event">Product Launch · February 2025</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="testi-nav">
+                <button class="testi-btn" id="testi-prev" aria-label="Previous review">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z" />
+                    </svg>
+                </button>
+                <button class="testi-btn" id="testi-next" aria-label="Next review">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ENQUIRY FORM SECTION -->
+    <section id="enquiry">
+        <div class="container">
+            <div class="enquiry-grid">
+                <!-- Left info -->
+                <div class="enquiry-info reveal">
+                    <div class="section-badge">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                        </svg>
+                        Get In Touch
+                    </div>
+                    <h2 class="section-title">Plan Your <span class="accent">Dream Event</span></h2>
+                    <p>Tell us about your vision and we'll help you turn it into reality. Fill out the form and we'll
+                        get back to you within 24 hours.</p>
+                    <div class="enq-contact-items">
+                        <div class="enq-contact-item">
+                            <div class="enq-contact-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" />
+                                </svg>
+                            </div>
+                            <span>+91 90669 06052</span>
+                        </div>
+                        <div class="enq-contact-item">
+                            <div class="enq-contact-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                                </svg>
+                            </div>
+                            <span>dreamsolutions@gmail.com</span>
+                        </div>
+                        <div class="enq-contact-item">
+                            <div class="enq-contact-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                                </svg>
+                            </div>
+                            <span>Mysore, Karnataka, India</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right form -->
+                <div class="enquiry-form-wrap reveal">
+                    <form id="enquiry-form" onsubmit="handleSubmit(event)" novalidate>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Your Name *</label>
+                                <input type="text" id="name" name="name" placeholder="e.g. Priya Sharma" required
+                                    autocomplete="name">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" required
+                                    autocomplete="tel">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="your@email.com"
+                                autocomplete="email">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="event-type">Event Type *</label>
+                                <select id="event-type" name="event-type" required>
+                                    <option value="" disabled selected>Select event type</option>
+                                    <option value="wedding">Wedding</option>
+                                    <option value="corporate">Corporate Event</option>
+                                    <option value="birthday">Birthday Party</option>
+                                    <option value="anniversary">Anniversary</option>
+                                    <option value="social">Social Gathering</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="event-date">Event Date</label>
+                                <input type="date" id="event-date" name="event-date" autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="guests">Expected Guests</label>
+                            <select id="guests" name="guests">
+                                <option value="" disabled selected>Select guest count</option>
+                                <option value="<50">Less than 50</option>
+                                <option value="50-100">50 – 100</option>
+                                <option value="100-300">100 – 300</option>
+                                <option value="300-500">300 – 500</option>
+                                <option value="500+">500+</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Tell Us Your Vision</label>
+                            <textarea id="message" name="message" rows="4"
+                                placeholder="Describe your dream event — theme, venue preferences, special requirements..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary"
+                            style="width:100%; justify-content:center; font-size:1rem;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+                            </svg>
+                            Send Enquiry
+                        </button>
+                    </form>
+                    <div class="form-success" id="form-success">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="#22c55e">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5l-4-4 1.41-1.41L10 13.67l6.59-6.58L18 8.5l-8 8z" />
+                        </svg>
+                        <p>Thank you! We've received your enquiry and will contact you within 24 hours.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT & MAP SECTION -->
+    <section id="contact">
+        <div class="container">
+            <div style="text-align:center; margin-bottom:48px;">
+                <div class="section-badge">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                    </svg>
+                    Find Us
+                </div>
+                <h2 class="section-title">Visit Us in <span class="accent">Mysore</span></h2>
+            </div>
+            <div class="contact-grid">
+                <!-- Map -->
+                <div class="map-wrap reveal">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3898.345!2d76.6394!3d12.2958!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baf700173debc5b%3A0x3c0f3c40cf6d6c90!2sMysuru%2C%20Karnataka%2C%20India!5e0!3m2!1sen!2sin!4v1700000000000"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                        title="Dream Solutions location in Mysore, Karnataka">
+                    </iframe>
+                </div>
+
+                <!-- Contact details -->
+                <div class="contact-details reveal">
+                    <h2>Get In Touch</h2>
+                    <p>Reach out to us through any of these channels. We'd love to hear about your event vision.</p>
+
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <div class="c-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="c-label">Phone / WhatsApp</div>
+                                <div class="c-val"><a href="tel:+919066906052">+91 90669 06052</a></div>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="c-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="c-label">Email</div>
+                                <div class="c-val"><a
+                                        href="mailto:dreamsolutions@gmail.com">dreamsolutions@gmail.com</a></div>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="c-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="c-label">Location</div>
+                                <div class="c-val">Mysore, Karnataka, India</div>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="c-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="c-label">Working Hours</div>
+                                <div class="c-val">Mon–Sun: 9:00 AM – 9:00 PM</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom:16px; font-size:0.9rem; color:var(--text2); font-weight:600;">Follow Us
+                    </div>
+                    <div class="social-row">
+                        <a href="https://wa.me/919066906052" class="soc-btn" target="_blank" rel="noopener"
+                            aria-label="WhatsApp">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                                <path
+                                    d="M12 0C5.373 0 0 5.373 0 12c0 2.126.554 4.118 1.523 5.851L0 24l6.335-1.491A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.645-.52-5.148-1.422l-.369-.219-3.76.886.925-3.67-.24-.38A9.947 9.947 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/dreamsolutionsmysore/" class="soc-btn" target="_blank"
+                            rel="noopener" aria-label="Instagram">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                            </svg>
+                        </a>
+                        <a href="mailto:dreamsolutions@gmail.com" class="soc-btn" aria-label="Email">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                            </svg>
+                        </a>
+                        <a href="tel:+919066906052" class="soc-btn" aria-label="Call us">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Brand -->
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <span class="logo-star">✦</span>
+                        Dream Solutions
+                    </div>
+                    <p>Turning moments into memories since 2016. Mysore's most trusted event management company for
+                        weddings, corporate events, and celebrations of every kind.</p>
+                    <div class="footer-social">
+                        <a href="https://wa.me/919066906052" class="footer-soc" target="_blank" rel="noopener"
+                            aria-label="WhatsApp">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                                <path
+                                    d="M12 0C5.373 0 0 5.373 0 12c0 2.126.554 4.118 1.523 5.851L0 24l6.335-1.491A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.645-.52-5.148-1.422l-.369-.219-3.76.886.925-3.67-.24-.38A9.947 9.947 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/dreamsolutionsmysore/" class="footer-soc" target="_blank"
+                            rel="noopener" aria-label="Instagram">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                            </svg>
+                        </a>
+                        <a href="mailto:dreamsolutions@gmail.com" class="footer-soc" aria-label="Email">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#testimonials">Reviews</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services">Wedding Planning</a></li>
+                        <li><a href="#services">Corporate Events</a></li>
+                        <li><a href="#services">Birthday Parties</a></li>
+                        <li><a href="#services">Social Gatherings</a></li>
+                        <li><a href="#services">Theme Décor</a></li>
+                        <li><a href="#services">Entertainment</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul class="footer-links">
+                        <li>
+                            <a href="tel:+919066906052" style="display:flex; align-items:center; gap:8px;">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" />
+                                </svg>
+                                +91 90669 06052
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:dreamsolutions@gmail.com"
+                                style="display:flex; align-items:center; gap:8px;">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                                </svg>
+                                dreamsolutions@gmail.com
+                            </a>
+                        </li>
+                        <li>
+                            <span style="display:flex; align-items:center; gap:8px; color:var(--text2);">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                                </svg>
+                                Mysore, Karnataka, India
+                            </span>
+                        </li>
+                        <li style="margin-top:8px;">
+                            <a href="#enquiry" class="btn btn-primary" style="font-size:0.82rem; padding:10px 18px;">
+                                Get Free Quote
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <span>© 2025 Dream Solutions. All rights reserved. | Mysore, Karnataka</span>
+                <span>Made with <span style="color:#e53935;">♥</span> in Mysore</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        /* ===== THEME MANAGEMENT ===== */
+        const THEMES = ['dark', 'light', 'lgbt'];
+
+        function setTheme(t) {
+            if (!THEMES.includes(t)) t = 'dark';
+            document.documentElement.setAttribute('data-theme', t);
+            localStorage.setItem('ds-theme', t);
+            document.querySelectorAll('.th-ico-btn').forEach(btn => btn.classList.remove('on'));
+            const active = document.getElementById('btn-' + t);
+            if (active) active.classList.add('on');
+        }
+
+        // Load saved theme
+        (function () {
+            const saved = localStorage.getItem('ds-theme') || 'dark';
+            setTheme(saved);
+        })();
+
+        /* ===== MOBILE VIEWPORT HEIGHT FIX ===== */
+        function setVH() {
+            const vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', vh + 'px');
+        }
+        setVH();
+        window.addEventListener('resize', setVH);
+
+        /* ===== NAVBAR SCROLL ===== */
+        const navbar = document.getElementById('navbar');
+        function onScroll() {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        }
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+
+        /* ===== MOBILE MENU ===== */
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const btn = document.getElementById('hbg');
+            const isOpen = menu.classList.toggle('open');
+            btn.classList.toggle('open', isOpen);
+            btn.setAttribute('aria-expanded', String(isOpen));
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+        }
+
+        function closeMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const btn = document.getElementById('hbg');
+            menu.classList.remove('open');
+            btn.classList.remove('open');
+            btn.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        }
+
+        // Close menu on outside click
+        document.addEventListener('click', function (e) {
+            const menu = document.getElementById('mobile-menu');
+            const hbg = document.getElementById('hbg');
+            if (menu && menu.classList.contains('open')) {
+                if (!menu.contains(e.target) && !hbg.contains(e.target)) closeMenu();
+            }
+        });
+
+        /* ===== SMOOTH SCROLL WITH OFFSET ===== */
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href === '#') return;
+                const target = document.querySelector(href);
+                if (!target) return;
+                e.preventDefault();
+                const offset = 72;
+                const top = target.getBoundingClientRect().top + window.scrollY - offset;
+                window.scrollTo({ top, behavior: 'smooth' });
+            });
+        });
+
+        /* ===== SCROLL REVEAL ===== */
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        /* ===== HERO PARALLAX (desktop only) ===== */
+        const heroBg = document.getElementById('hero-bg');
+        if (heroBg) {
+            heroBg.style.backgroundImage = "url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1600&auto=format&fit=crop&q=80')";
+            heroBg.style.backgroundSize = 'cover';
+            heroBg.style.backgroundPosition = 'center';
+
+            if (window.innerWidth > 768) {
+                window.addEventListener('scroll', function () {
+                    const scrolled = window.scrollY;
+                    const limit = window.innerHeight;
+                    if (scrolled < limit) {
+                        heroBg.style.transform = 'scale(1.05) translateY(' + (scrolled * 0.25) + 'px)';
+                    }
+                }, { passive: true });
+            }
+        }
+
+        /* ===== GALLERY FILTER ===== */
+        const galItems = document.querySelectorAll('.gal-item');
+        const galFilters = document.querySelectorAll('.gal-filter');
+
+        galFilters.forEach(btn => {
+            btn.addEventListener('click', function () {
+                galFilters.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                const filter = this.getAttribute('data-filter');
+                galItems.forEach(item => {
+                    const cat = item.getAttribute('data-cat');
+                    if (filter === 'all' || cat === filter) {
+                        item.style.display = '';
+                        item.style.opacity = '0';
+                        setTimeout(() => { item.style.opacity = '1'; item.style.transition = 'opacity 0.3s'; }, 10);
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        /* ===== TESTIMONIALS CAROUSEL ===== */
+        (function () {
+            const track = document.getElementById('testi-track');
+            const wrap = document.getElementById('testi-wrap');
+            if (!track || !wrap) return;
+
+            let current = 0;
+            let startX = 0, isDragging = false;
+            const cards = track.querySelectorAll('.testi-card');
+
+            function getCardWidth() {
+                if (!cards[0]) return 344;
+                return cards[0].offsetWidth + 24; // card + gap
+            }
+
+            function goTo(idx) {
+                const total = cards.length;
+                current = Math.max(0, Math.min(idx, total - 1));
+                const offset = current * getCardWidth();
+                track.style.transform = 'translateX(-' + offset + 'px)';
+            }
+
+            document.getElementById('testi-prev').addEventListener('click', () => goTo(current - 1));
+            document.getElementById('testi-next').addEventListener('click', () => goTo(current + 1));
+
+            // Touch / drag swipe
+            track.addEventListener('touchstart', e => {
+                startX = e.touches[0].clientX;
+                isDragging = true;
+            }, { passive: true });
+            track.addEventListener('touchend', e => {
+                if (!isDragging) return;
+                const diff = startX - e.changedTouches[0].clientX;
+                if (Math.abs(diff) > 50) goTo(diff > 0 ? current + 1 : current - 1);
+                isDragging = false;
+            }, { passive: true });
+
+            // Mouse drag
+            track.addEventListener('mousedown', e => { startX = e.clientX; isDragging = true; track.style.cursor = 'grabbing'; });
+            window.addEventListener('mouseup', e => {
+                if (!isDragging) return;
+                const diff = startX - e.clientX;
+                if (Math.abs(diff) > 50) goTo(diff > 0 ? current + 1 : current - 1);
+                isDragging = false; track.style.cursor = '';
+            });
+
+            // Responsive: adjust on resize
+            window.addEventListener('resize', () => goTo(current));
+        })();
+
+        /* ===== FORM SUBMIT ===== */
+        function handleSubmit(e) {
+            e.preventDefault();
+            const form = document.getElementById('enquiry-form');
+            const success = document.getElementById('form-success');
+            // Basic validation
+            const name = form.querySelector('#name').value.trim();
+            const phone = form.querySelector('#phone').value.trim();
+            const type = form.querySelector('#event-type').value;
+            if (!name || !phone || !type) {
+                alert('Please fill in all required fields (Name, Phone, Event Type).');
+                return;
+            }
+            form.style.display = 'none';
+            success.style.display = 'block';
+            // Scroll to success message
+            success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    </script>
+</body>
+
+</html>
