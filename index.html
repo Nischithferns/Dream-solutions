@@ -1,0 +1,2755 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Dream Solutions – Event Management Company in Mysore. Weddings, Corporate Events, Birthdays & More." />
+    <title>Dream Solutions | Turning Moments into Memories</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+
+        /* ── THEMES ─────────────────────────────────────── */
+        :root {
+            --r: 14px;
+            --rs: 8px;
+            --tr: 0.3s ease;
+            --vh: 1vh;
+        }
+
+        [data-theme="dark"] {
+            --bg: #0a0a0f;
+            --bg2: #111118;
+            --bg3: #18181f;
+            --card: #1a1a24;
+            --card2: #22222d;
+            --tx: #f0eff5;
+            --tx2: #a09cb5;
+            --tx3: #6b6880;
+            --ac: #c9a96e;
+            --ac2: #e8c98a;
+            --acr: 201, 169, 110;
+            --bo: rgba(255, 255, 255, 0.08);
+            --nb: rgba(10, 10, 15, 0.96);
+            --shadow: rgba(0, 0, 0, 0.4);
+            --ov: rgba(0, 0, 0, 0.58);
+            --fb: #07070c;
+        }
+
+        [data-theme="light"] {
+            --bg: #faf9f7;
+            --bg2: #f2efe9;
+            --bg3: #e8e4dc;
+            --card: #ffffff;
+            --card2: #f5f2ec;
+            --tx: #1a1610;
+            --tx2: #6b5f4a;
+            --tx3: #a09278;
+            --ac: #b8892a;
+            --ac2: #d4a843;
+            --acr: 184, 137, 42;
+            --bo: rgba(0, 0, 0, 0.09);
+            --nb: rgba(250, 249, 247, 0.97);
+            --shadow: rgba(0, 0, 0, 0.1);
+            --ov: rgba(0, 0, 0, 0.45);
+            --fb: #1a1610;
+        }
+
+        [data-theme="lgbt"] {
+            --bg: #0d0a14;
+            --bg2: #140f1e;
+            --bg3: #1a1428;
+            --card: #1e1830;
+            --card2: #251c3a;
+            --tx: #f5f0ff;
+            --tx2: #b8a8d8;
+            --tx3: #7a6a9a;
+            --ac: #e879f9;
+            --ac2: #a855f7;
+            --acr: 232, 121, 249;
+            --bo: rgba(232, 121, 249, 0.14);
+            --nb: rgba(13, 10, 20, 0.96);
+            --shadow: rgba(0, 0, 0, 0.5);
+            --ov: rgba(0, 0, 0, 0.62);
+            --fb: #08060f;
+        }
+
+        /* ── RESET ───────────────────────────────────────── */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg);
+            color: var(--tx);
+            line-height: 1.6;
+            overflow-x: hidden;
+            transition: background var(--tr), color var(--tr)
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover
+        }
+
+        ul {
+            list-style: none
+        }
+
+        button {
+            cursor: pointer;
+            border: none;
+            background: none;
+            font-family: inherit;
+            font-size: inherit
+        }
+
+        input,
+        select,
+        textarea {
+            font-family: inherit;
+            font-size: 16px;
+            width: 100%;
+            background: var(--card2);
+            color: var(--tx);
+            border: 1.5px solid var(--bo);
+            border-radius: var(--rs);
+            padding: 12px 16px;
+            outline: none;
+            transition: border-color var(--tr);
+            -webkit-appearance: none;
+            appearance: none
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: var(--ac)
+        }
+
+        select option {
+            background: var(--card);
+            color: var(--tx)
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px
+        }
+
+        svg {
+            display: inline-block;
+            vertical-align: middle;
+            flex-shrink: 0
+        }
+
+        /* ── TYPOGRAPHY ──────────────────────────────────── */
+        .sec-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(var(--acr), 0.12);
+            border: 1px solid rgba(var(--acr), 0.25);
+            color: var(--ac);
+            padding: 6px 14px;
+            border-radius: 99px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 14px
+        }
+
+        .sec-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(1.9rem, 4vw, 2.9rem);
+            font-weight: 700;
+            line-height: 1.18;
+            color: var(--tx);
+            margin-bottom: 14px
+        }
+
+        .sec-title em {
+            font-style: italic;
+            color: var(--ac)
+        }
+
+        .sec-sub {
+            color: var(--tx2);
+            font-size: 1.02rem;
+            max-width: 560px;
+            line-height: 1.7
+        }
+
+        .sec-head {
+            text-align: center;
+            margin-bottom: 52px
+        }
+
+        .sec-head .sec-sub {
+            margin: 0 auto
+        }
+
+        .accent {
+            color: var(--ac)
+        }
+
+        /* ── BUTTONS ─────────────────────────────────────── */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 13px 28px;
+            border-radius: 99px;
+            font-weight: 600;
+            font-size: 0.92rem;
+            transition: all var(--tr);
+            cursor: pointer;
+            border: none;
+            font-family: inherit
+        }
+
+        .btn-p {
+            background: linear-gradient(135deg, var(--ac), var(--ac2));
+            color: #1a1200;
+            box-shadow: 0 4px 18px rgba(var(--acr), 0.35)
+        }
+
+        .btn-p:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(var(--acr), 0.5)
+        }
+
+        [data-theme="lgbt"] .btn-p {
+            background: linear-gradient(135deg, #e879f9, #a855f7);
+            color: #fff
+        }
+
+        .btn-o {
+            background: transparent;
+            color: var(--tx);
+            border: 1.5px solid rgba(255, 255, 255, 0.45)
+        }
+
+        .btn-o:hover {
+            border-color: #fff;
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-2px)
+        }
+
+        /* ── SCROLL REVEAL ───────────────────────────────── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(32px);
+            transition: opacity 0.65s ease, transform 0.65s ease
+        }
+
+        .reveal.on {
+            opacity: 1;
+            transform: none
+        }
+    </style>
+</head>
+
+<body>
+
+    <style>
+        /* ── NAVBAR ──────────────────────────────────────── */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 14px 0;
+            transition: background var(--tr), box-shadow var(--tr), padding var(--tr)
+        }
+
+        .nav.sc {
+            background: var(--nb);
+            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 2px 24px var(--shadow);
+            padding: 8px 0
+        }
+
+        .nav-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            height: 56px
+        }
+
+        /* Logo */
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+            margin-right: 32px
+        }
+
+        .nav-logo-star {
+            font-size: 1.2rem;
+            color: var(--ac)
+        }
+
+        .nav-logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--tx);
+            white-space: nowrap
+        }
+
+        /* Desktop links */
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            flex: 1;
+            justify-content: center
+        }
+
+        .nav-link {
+            padding: 7px 12px;
+            border-radius: var(--rs);
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--tx2);
+            transition: color var(--tr), background var(--tr);
+            white-space: nowrap
+        }
+
+        .nav-link:hover,
+        .nav-link.on {
+            color: var(--ac)
+        }
+
+        /* Right group */
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+            margin-left: 24px
+        }
+
+        /* Theme pill */
+        .theme-pill {
+            display: flex;
+            align-items: center;
+            background: var(--card);
+            border: 1px solid var(--bo);
+            border-radius: 10px;
+            padding: 3px;
+            gap: 2px
+        }
+
+        .th-btn {
+            width: 30px;
+            height: 30px;
+            border-radius: 7px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--tx3);
+            transition: all var(--tr)
+        }
+
+        .th-btn:hover {
+            color: var(--tx)
+        }
+
+        .th-btn.on {
+            background: var(--bg2);
+            color: var(--ac);
+            box-shadow: 0 1px 6px var(--shadow)
+        }
+
+        [data-theme="light"] .th-btn.on {
+            background: #fff
+        }
+
+        /* WA + Call buttons */
+        .nav-wa {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border-radius: 99px;
+            border: 1.5px solid #25d366;
+            color: #25d366;
+            font-size: 0.83rem;
+            font-weight: 600;
+            transition: all var(--tr);
+            white-space: nowrap
+        }
+
+        .nav-wa:hover {
+            background: rgba(37, 211, 102, 0.1)
+        }
+
+        .nav-call {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border-radius: 99px;
+            background: #e53935;
+            color: #fff;
+            font-size: 0.83rem;
+            font-weight: 600;
+            transition: all var(--tr);
+            white-space: nowrap
+        }
+
+        .nav-call:hover {
+            background: #c62828;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 14px rgba(229, 57, 53, 0.4)
+        }
+
+        /* Hamburger */
+        .hbg {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            width: 32px;
+            height: 32px;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--rs);
+            flex-shrink: 0
+        }
+
+        .hbg span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: var(--tx);
+            border-radius: 2px;
+            transition: all var(--tr)
+        }
+
+        .hbg.open span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px)
+        }
+
+        .hbg.open span:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0)
+        }
+
+        .hbg.open span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px)
+        }
+
+        /* Mobile dropdown — HIDDEN globally, shown only on mobile when open */
+        .nav-mob {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: var(--nb);
+            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--bo);
+            flex-direction: column;
+            z-index: 999
+        }
+
+        .nav-mob.open {
+            display: flex
+        }
+
+        .nav-mob a {
+            padding: 14px 24px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--tx2);
+            border-bottom: 1px solid var(--bo);
+            transition: color var(--tr), background var(--tr)
+        }
+
+        .nav-mob a:last-child {
+            border-bottom: none
+        }
+
+        .nav-mob a:hover {
+            color: var(--ac);
+            background: rgba(var(--acr), 0.06)
+        }
+
+        /* ── FLOATING SOCIAL ─────────────────────────────── */
+        .fsoc {
+            position: fixed;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 900;
+            display: flex;
+            flex-direction: column;
+            gap: 10px
+        }
+
+        .fsoc-btn {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            transition: transform 0.3s cubic-bezier(.34, 1.56, .64, 1), box-shadow 0.3s ease;
+            position: relative;
+            flex-shrink: 0
+        }
+
+        .fsoc-btn::before {
+            content: attr(data-tip);
+            position: absolute;
+            right: 58px;
+            top: 50%;
+            transform: translateY(-50%) scale(0.9);
+            background: var(--card);
+            color: var(--tx);
+            border: 1px solid var(--bo);
+            padding: 5px 12px;
+            border-radius: 8px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 12px var(--shadow);
+            font-family: inherit
+        }
+
+        .fsoc-btn:hover::before {
+            opacity: 1;
+            transform: translateY(-50%) scale(1)
+        }
+
+        .fsoc-btn:hover {
+            transform: scale(1.14)
+        }
+
+        .f-wa {
+            background: linear-gradient(135deg, #128C7E, #25D366);
+            box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4)
+        }
+
+        .f-wa:hover {
+            box-shadow: 0 6px 24px rgba(37, 211, 102, 0.6)
+        }
+
+        .f-ca {
+            background: linear-gradient(135deg, #1565c0, #42a5f5);
+            box-shadow: 0 4px 16px rgba(66, 165, 245, 0.4)
+        }
+
+        .f-ca:hover {
+            box-shadow: 0 6px 24px rgba(66, 165, 245, 0.6)
+        }
+
+        .f-ig {
+            background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+            box-shadow: 0 4px 16px rgba(253, 29, 29, 0.35)
+        }
+
+        .f-ig:hover {
+            box-shadow: 0 6px 24px rgba(253, 29, 29, 0.5)
+        }
+
+        .f-em {
+            background: linear-gradient(135deg, #c62828, #ef5350);
+            box-shadow: 0 4px 16px rgba(239, 83, 80, 0.35)
+        }
+
+        .f-em:hover {
+            box-shadow: 0 6px 24px rgba(239, 83, 80, 0.5)
+        }
+    </style>
+
+    <!-- ═══════════════ NAVBAR ═══════════════ -->
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="#hero" class="nav-logo">
+                <span class="nav-logo-star">✦</span>
+                <span class="nav-logo-text">Dream <span style="color:var(--ac)">Solutions</span></span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="#hero" class="nav-link on">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#gallery" class="nav-link">Gallery</a>
+                <a href="#testi" class="nav-link">Reviews</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-right">
+                <div class="theme-pill">
+                    <button class="th-btn on" id="b-dark" onclick="setTheme('dark')" title="Dark"
+                        aria-label="Dark theme">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                        </svg>
+                    </button>
+                    <button class="th-btn" id="b-light" onclick="setTheme('light')" title="Light"
+                        aria-label="Light theme">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round">
+                            <circle cx="12" cy="12" r="5" />
+                            <line x1="12" y1="1" x2="12" y2="3" />
+                            <line x1="12" y1="21" x2="12" y2="23" />
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                            <line x1="1" y1="12" x2="3" y2="12" />
+                            <line x1="21" y1="12" x2="23" y2="12" />
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                        </svg>
+                    </button>
+                    <button class="th-btn" id="b-lgbt" onclick="setTheme('lgbt')" title="Pride"
+                        aria-label="Pride theme">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 3a9 9 0 1 0 0 18A9 9 0 0 0 12 3zm0 2a7 7 0 0 1 5.32 11.54l-9.86-9.86A6.97 6.97 0 0 1 12 5zm-5.32 2.46 9.86 9.86A7 7 0 0 1 4.68 7.46z" />
+                        </svg>
+                    </button>
+                </div>
+                <a href="https://wa.me/919066906052" target="_blank" class="nav-wa" aria-label="WhatsApp">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                        <path
+                            d="M12 0C5.373 0 0 5.373 0 12c0 2.126.554 4.118 1.523 5.851L0 24l6.335-1.491A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.645-.52-5.148-1.422l-.369-.219-3.76.886.925-3.67-.24-.38A9.947 9.947 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
+                    </svg>
+                    WhatsApp
+                </a>
+                <a href="tel:+919066906052" class="nav-call" aria-label="Call us">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" />
+                    </svg>
+                    Call Now
+                </a>
+                <button class="hbg" id="hbg" onclick="toggleNav()" aria-label="Menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+        <div class="nav-mob" id="navMob">
+            <a href="#hero" onclick="closeNav()">Home</a>
+            <a href="#about" onclick="closeNav()">About</a>
+            <a href="#services" onclick="closeNav()">Services</a>
+            <a href="#gallery" onclick="closeNav()">Gallery</a>
+            <a href="#testi" onclick="closeNav()">Reviews</a>
+            <a href="#enquiry" onclick="closeNav()">Get a Quote</a>
+            <a href="#contact" onclick="closeNav()">Contact</a>
+        </div>
+    </nav>
+
+    <!-- ═══════════════ FLOATING SOCIAL ═══════════════ -->
+    <div class="fsoc">
+        <a href="https://wa.me/919066906052" target="_blank" class="fsoc-btn f-wa" data-tip="WhatsApp"
+            aria-label="WhatsApp">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="white">
+                <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                <path
+                    d="M12 0C5.373 0 0 5.373 0 12c0 2.126.554 4.118 1.523 5.851L0 24l6.335-1.491A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.645-.52-5.148-1.422l-.369-.219-3.76.886.925-3.67-.24-.38A9.947 9.947 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
+            </svg>
+        </a>
+        <a href="tel:+919066906052" class="fsoc-btn f-ca" data-tip="Call Now" aria-label="Call">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                <path
+                    d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" />
+            </svg>
+        </a>
+        <a href="https://www.instagram.com/dreamsolutionsmysore/" target="_blank" class="fsoc-btn f-ig"
+            data-tip="Instagram" aria-label="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+            </svg>
+        </a>
+        <a href="mailto:dreamsolutions@gmail.com" class="fsoc-btn f-em" data-tip="Email Us" aria-label="Email">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                <path
+                    d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+            </svg>
+        </a>
+    </div>
+
+    <style>
+        /* ── HERO ────────────────────────────────────────── */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            min-height: calc(var(--vh)*100);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1600&auto=format&fit=crop&q=80') center/cover;
+            transform: scale(1.06);
+            will-change: transform
+        }
+
+        .hero-ov {
+            position: absolute;
+            inset: 0;
+            background: var(--ov)
+        }
+
+        [data-theme="lgbt"] .hero-ov {
+            background: linear-gradient(135deg, rgba(13, 10, 20, 0.72), rgba(88, 28, 135, 0.55))
+        }
+
+        .hero-body {
+            position: relative;
+            z-index: 2;
+            padding: 0 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            padding-top: 80px
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(var(--acr), 0.16);
+            border: 1px solid rgba(var(--acr), 0.38);
+            color: var(--ac);
+            padding: 8px 18px;
+            border-radius: 99px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            -webkit-backdrop-filter: blur(8px);
+            backdrop-filter: blur(8px)
+        }
+
+        [data-theme="lgbt"] .hero-badge {
+            background: rgba(232, 121, 249, 0.16);
+            border-color: rgba(232, 121, 249, 0.38)
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.8rem, 8vw, 5.5rem);
+            font-weight: 900;
+            line-height: 1.08;
+            color: #fff;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3)
+        }
+
+        .hero-title span {
+            color: var(--ac);
+            -webkit-text-fill-color: var(--ac)
+        }
+
+        [data-theme="lgbt"] .hero-title span {
+            background: linear-gradient(90deg, #f472b6, #e879f9, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text
+        }
+
+        .hero-sub {
+            font-size: clamp(0.98rem, 2vw, 1.2rem);
+            color: rgba(255, 255, 255, 0.82);
+            max-width: 540px;
+            margin: 0 auto 36px;
+            line-height: 1.72
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 56px
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            flex-wrap: wrap
+        }
+
+        .stat-num {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 2.6rem);
+            font-weight: 700;
+            color: var(--ac);
+            line-height: 1
+        }
+
+        [data-theme="lgbt"] .stat-num {
+            background: linear-gradient(135deg, #e879f9, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text
+        }
+
+        .stat-lbl {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.65);
+            margin-top: 4px
+        }
+
+        /* ── ABOUT ───────────────────────────────────────── */
+        .about {
+            padding: 100px 0;
+            background: var(--bg2)
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center
+        }
+
+        .about-imgs {
+            position: relative;
+            height: 500px
+        }
+
+        .about-img1 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 74%;
+            height: 78%;
+            border-radius: var(--r);
+            overflow: hidden;
+            box-shadow: 0 20px 56px var(--shadow)
+        }
+
+        .about-img1 img,
+        .about-img2 img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease
+        }
+
+        .about-img1:hover img,
+        .about-img2:hover img {
+            transform: scale(1.04)
+        }
+
+        .about-img2 {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 52%;
+            height: 52%;
+            border-radius: var(--r);
+            overflow: hidden;
+            box-shadow: 0 16px 40px var(--shadow);
+            border: 4px solid var(--bg2)
+        }
+
+        .about-yrs {
+            position: absolute;
+            top: 28px;
+            right: 0;
+            width: 88px;
+            height: 88px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--ac), var(--ac2));
+            color: #1a1200;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            box-shadow: 0 8px 28px rgba(var(--acr), 0.5);
+            z-index: 4
+        }
+
+        [data-theme="lgbt"] .about-yrs {
+            background: linear-gradient(135deg, #e879f9, #a855f7);
+            color: #fff
+        }
+
+        .about-yrs-n {
+            font-size: 1.6rem;
+            line-height: 1
+        }
+
+        .about-yrs-l {
+            font-size: 0.6rem;
+            text-align: center;
+            line-height: 1.3;
+            opacity: 0.88
+        }
+
+        .about-txt p {
+            color: var(--tx2);
+            margin-bottom: 14px;
+            line-height: 1.82
+        }
+
+        .about-hl {
+            display: flex;
+            flex-direction: column;
+            gap: 11px;
+            margin: 24px 0 32px
+        }
+
+        .about-hl-item {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            color: var(--tx2);
+            font-size: 0.93rem
+        }
+
+        .about-hl-item svg {
+            color: var(--ac);
+            flex-shrink: 0
+        }
+
+        /* ── SERVICES ────────────────────────────────────── */
+        .services {
+            padding: 100px 0;
+            background: var(--bg)
+        }
+
+        .svc-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px
+        }
+
+        .svc-card {
+            background: var(--card);
+            border-radius: var(--r);
+            overflow: hidden;
+            border: 1px solid var(--bo);
+            transition: transform var(--tr), box-shadow var(--tr)
+        }
+
+        .svc-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 48px var(--shadow)
+        }
+
+        .svc-img {
+            height: 196px;
+            overflow: hidden;
+            position: relative
+        }
+
+        .svc-img img {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.55s ease
+        }
+
+        .svc-card:hover .svc-img img {
+            transform: scale(1.06)
+        }
+
+        .svc-ico {
+            position: absolute;
+            bottom: -20px;
+            left: 20px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--ac), var(--ac2));
+            color: #1a1200;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 16px rgba(var(--acr), 0.4)
+        }
+
+        [data-theme="lgbt"] .svc-ico {
+            background: linear-gradient(135deg, #e879f9, #a855f7);
+            color: #fff
+        }
+
+        .svc-body {
+            padding: 32px 20px 24px
+        }
+
+        .svc-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.12rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--tx)
+        }
+
+        .svc-desc {
+            color: var(--tx2);
+            font-size: 0.87rem;
+            line-height: 1.68
+        }
+
+        /* ── WHY US ──────────────────────────────────────── */
+        .whyus {
+            padding: 80px 0;
+            background: var(--bg2);
+            border-top: 1px solid var(--bo);
+            border-bottom: 1px solid var(--bo)
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px
+        }
+
+        .why-card {
+            background: var(--card);
+            border-radius: var(--r);
+            padding: 30px 22px;
+            text-align: center;
+            border: 1px solid var(--bo);
+            transition: transform var(--tr), box-shadow var(--tr)
+        }
+
+        .why-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 40px var(--shadow)
+        }
+
+        .why-ico {
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: rgba(var(--acr), 0.1);
+            color: var(--ac);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            transition: all var(--tr)
+        }
+
+        .why-card:hover .why-ico {
+            background: linear-gradient(135deg, var(--ac), var(--ac2));
+            color: #1a1200
+        }
+
+        [data-theme="lgbt"] .why-ico {
+            background: rgba(232, 121, 249, 0.1)
+        }
+
+        [data-theme="lgbt"] .why-card:hover .why-ico {
+            background: linear-gradient(135deg, #e879f9, #a855f7);
+            color: #fff
+        }
+
+        .why-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.02rem;
+            font-weight: 700;
+            color: var(--tx);
+            margin-bottom: 8px
+        }
+
+        .why-desc {
+            color: var(--tx2);
+            font-size: 0.86rem;
+            line-height: 1.6
+        }
+    </style>
+
+    <!-- ═══════════════ HERO ═══════════════ -->
+    <section class="hero" id="hero">
+        <div class="hero-bg" id="heroBg"></div>
+        <div class="hero-ov"></div>
+        <div class="hero-body">
+            <div class="hero-badge">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                </svg>
+                Mysore's Premier Event Planners · Est. 2016
+            </div>
+            <h1 class="hero-title">Turning Moments<br><span>into Memories</span></h1>
+            <p class="hero-sub">Dream Solutions brings your vision to life — from intimate weddings to grand corporate
+                galas. Every detail crafted with passion in Mysore.</p>
+            <div class="hero-btns">
+                <a href="#enquiry" class="btn btn-p">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+                    </svg>
+                    Plan My Event
+                </a>
+                <a href="#services" class="btn btn-o">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z" />
+                    </svg>
+                    Explore Services
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div>
+                    <div class="stat-num">500+</div>
+                    <div class="stat-lbl">Events Done</div>
+                </div>
+                <div>
+                    <div class="stat-num">8+</div>
+                    <div class="stat-lbl">Years Experience</div>
+                </div>
+                <div>
+                    <div class="stat-num">98%</div>
+                    <div class="stat-lbl">Happy Clients</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════ ABOUT ═══════════════ -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-imgs reveal">
+                    <div class="about-img1"><img
+                            src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=700&auto=format&fit=crop&q=80"
+                            alt="Elegant event" loading="lazy" /></div>
+                    <div class="about-img2"><img
+                            src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=400&auto=format&fit=crop&q=80"
+                            alt="Birthday decor" loading="lazy" /></div>
+                    <div class="about-yrs"><span class="about-yrs-n">8+</span><span class="about-yrs-l">Years
+                            of<br />Excellence</span></div>
+                </div>
+                <div class="about-txt reveal">
+                    <div class="sec-tag">About Us</div>
+                    <h2 class="sec-title">We Don't Just Plan Events,<br /><em>We Create Experiences</em></h2>
+                    <p>Dream Solutions is Mysore's trusted event management company, dedicated to transforming your
+                        vision into flawless reality. From intimate family gatherings to large-scale corporate events,
+                        every detail is handled with passion and precision.</p>
+                    <p>Based in the heart of Mysore, Karnataka, our experienced team blends local traditions with modern
+                        aesthetics to deliver extraordinary results every time.</p>
+                    <div class="about-hl">
+                        <div class="about-hl-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5l-4-4 1.41-1.41L10 13.67l6.59-6.58L18 8.5l-8 8z" />
+                            </svg>500+ successful events across Karnataka</div>
+                        <div class="about-hl-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5l-4-4 1.41-1.41L10 13.67l6.59-6.58L18 8.5l-8 8z" />
+                            </svg>End-to-end event planning &amp; coordination</div>
+                        <div class="about-hl-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5l-4-4 1.41-1.41L10 13.67l6.59-6.58L18 8.5l-8 8z" />
+                            </svg>Custom packages for every budget</div>
+                        <div class="about-hl-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5l-4-4 1.41-1.41L10 13.67l6.59-6.58L18 8.5l-8 8z" />
+                            </svg>24/7 support before, during &amp; after your event</div>
+                    </div>
+                    <a href="#enquiry" class="btn btn-p">Start Planning <svg width="16" height="16" viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z" />
+                        </svg></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════ SERVICES ═══════════════ -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="sec-head reveal">
+                <div class="sec-tag">What We Do</div>
+                <h2 class="sec-title">Our <em>Services</em></h2>
+                <p class="sec-sub">From the first spark of an idea to the final applause — every moment covered.</p>
+            </div>
+            <div class="svc-grid">
+                <div class="svc-card reveal">
+                    <div class="svc-img"><img
+                            src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600&auto=format&fit=crop&q=80"
+                            alt="Wedding Planning" loading="lazy" />
+                        <div class="svc-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg></div>
+                    </div>
+                    <div class="svc-body">
+                        <div class="svc-title">Wedding Planning</div>
+                        <p class="svc-desc">Complete wedding management from engagement to reception. Venues, décor,
+                            catering, photography — every detail perfected.</p>
+                    </div>
+                </div>
+                <div class="svc-card reveal">
+                    <div class="svc-img"><img
+                            src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=600&auto=format&fit=crop&q=80"
+                            alt="Corporate Events" loading="lazy" />
+                        <div class="svc-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M20 6h-2.18c.07-.44.18-.88.18-1.36C18 2.99 16.64 2 15 2h-6C7.36 2 6 2.99 6 4.64c0 .48.11.92.18 1.36H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zM20 19H4V8h16v11z" />
+                            </svg></div>
+                    </div>
+                    <div class="svc-body">
+                        <div class="svc-title">Corporate Events</div>
+                        <p class="svc-desc">Product launches, conferences, team outings, award nights — professional
+                            events that leave a lasting impression.</p>
+                    </div>
+                </div>
+                <div class="svc-card reveal">
+                    <div class="svc-img"><img
+                            src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&auto=format&fit=crop&q=80"
+                            alt="Birthday Celebrations" loading="lazy" />
+                        <div class="svc-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 6c1.11 0 2-.89 2-2 0-.38-.1-.73-.29-1.03L12 0l-1.71 2.97c-.19.3-.29.65-.29 1.03 0 1.11.9 2 2 2zm4.6 9.99l-1.07-1.07-1.08 1.07c-1.3 1.3-3.58 1.31-4.89 0l-1.07-1.07-1.09 1.07C6.75 17.27 5.96 17.5 5 17.5v1.5c1.25 0 2.41-.44 3.29-1.21l.29-.26.29.26C9.56 18.56 10.73 19 12 19s2.44-.44 3.21-1.21l.29-.26.29.26C16.59 18.56 17.75 19 19 19v-1.5c-.96 0-1.75-.23-2.4-.51zM5 9v3h2v-2h10v2h2V9H5z" />
+                            </svg></div>
+                    </div>
+                    <div class="svc-body">
+                        <div class="svc-title">Birthday Celebrations</div>
+                        <p class="svc-desc">Milestone birthdays, surprise parties, themed events — we make every year
+                            count spectacularly.</p>
+                    </div>
+                </div>
+                <div class="svc-card reveal">
+                    <div class="svc-img"><img
+                            src="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=600&auto=format&fit=crop&q=80"
+                            alt="Social Gatherings" loading="lazy" />
+                        <div class="svc-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" />
+                            </svg></div>
+                    </div>
+                    <div class="svc-body">
+                        <div class="svc-title">Social Gatherings</div>
+                        <p class="svc-desc">Anniversaries, house warmings, naming ceremonies, baby showers — intimate
+                            moments made extraordinary.</p>
+                    </div>
+                </div>
+                <div class="svc-card reveal">
+                    <div class="svc-img"><img
+                            src="https://images.unsplash.com/photo-1478146059778-26028b07395a?w=600&auto=format&fit=crop&q=80"
+                            alt="Theme Decoration" loading="lazy" />
+                        <div class="svc-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M7.5 5.6L5 7 6.4 4.5 5 2l2.5 1.4L10 2 8.6 4.5 10 7 7.5 5.6zm12 9.8L22 14l-1.4 2.5L22 19l-2.5-1.4L17 19l1.4-2.5L17 14l2.5 1.4zM22 2l-1.4 2.5L22 7l-2.5-1.4L17 7l1.4-2.5L17 2l2.5 1.4L22 2zM13.34 12.78l-8.56-8.56-1.41 1.41 8.56 8.56 1.41-1.41z" />
+                            </svg></div>
+                    </div>
+                    <div class="svc-body">
+                        <div class="svc-title">Theme Decoration</div>
+                        <p class="svc-desc">Balloon décor, floral arrangements, lighting, stage setups — we transform
+                            venues into visual masterpieces.</p>
+                    </div>
+                </div>
+                <div class="svc-card reveal">
+                    <div class="svc-img"><img
+                            src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&auto=format&fit=crop&q=80"
+                            alt="Entertainment Shows" loading="lazy" />
+                        <div class="svc-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.49 6-3.31 6-6.72h-1.7z" />
+                            </svg></div>
+                    </div>
+                    <div class="svc-body">
+                        <div class="svc-title">Entertainment &amp; Shows</div>
+                        <p class="svc-desc">Live music, DJ, fashion shows, award functions, cultural performances —
+                            world-class production at any scale.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════ WHY US ═══════════════ -->
+    <section class="whyus">
+        <div class="container">
+            <div class="sec-head reveal">
+                <div class="sec-tag">Why Choose Us</div>
+                <h2 class="sec-title">The Dream Solutions <em>Difference</em></h2>
+                <p class="sec-sub">We go beyond event management to become your trusted partner in creating lifelong
+                    memories.</p>
+            </div>
+            <div class="why-grid">
+                <div class="why-card reveal">
+                    <div class="why-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                        </svg></div>
+                    <div class="why-title">Premium Quality</div>
+                    <p class="why-desc">Top-tier vendors, luxury décor, and flawless execution at every event.</p>
+                </div>
+                <div class="why-card reveal">
+                    <div class="why-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5z" />
+                        </svg></div>
+                    <div class="why-title">Always On Time</div>
+                    <p class="why-desc">We respect your schedule — every element runs precisely on time, every time.</p>
+                </div>
+                <div class="why-card reveal">
+                    <div class="why-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M13.66 7c-.46-1.19-1.61-2-2.96-2H6V7h2.96l.01.01C9.5 7 9.96 7.4 9.99 8H6v2h3.99C9.73 10.69 9.03 11.3 8 11.5L6 11v2l6 6 1.5-1.5-4.51-4.51c2.08-.54 3.48-2.13 3.96-4h1.05V7h-1z" />
+                        </svg></div>
+                    <div class="why-title">Budget Friendly</div>
+                    <p class="why-desc">Exceptional events for every budget. Transparent pricing, no hidden costs.</p>
+                </div>
+                <div class="why-card reveal">
+                    <div class="why-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 1C7.03 1 3 5.03 3 10v7c0 1.66 1.34 3 3 3h1v-8H5v-2c0-3.87 3.13-7 7-7s7 3.13 7 7v2h-2v8h1c1.66 0 3-1.34 3-3v-7c0-6.97-5.03-10-10-10z" />
+                        </svg></div>
+                    <div class="why-title">24/7 Support</div>
+                    <p class="why-desc">From first inquiry to the final goodbye — our team is always there for you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        /* ── GALLERY ─────────────────────────────────────── */
+        .gallery {
+            padding: 100px 0;
+            background: var(--bg)
+        }
+
+        .gal-filters {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 36px
+        }
+
+        .gal-f {
+            padding: 8px 20px;
+            border-radius: 99px;
+            font-size: 0.86rem;
+            font-weight: 600;
+            background: var(--card);
+            color: var(--tx2);
+            border: 1.5px solid var(--bo);
+            cursor: pointer;
+            transition: all var(--tr)
+        }
+
+        .gal-f:hover,
+        .gal-f.on {
+            background: linear-gradient(135deg, var(--ac), var(--ac2));
+            color: #1a1200;
+            border-color: transparent;
+            box-shadow: 0 4px 14px rgba(var(--acr), 0.3)
+        }
+
+        [data-theme="lgbt"] .gal-f.on {
+            background: linear-gradient(135deg, #e879f9, #a855f7);
+            color: #fff
+        }
+
+        .gal-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: 220px;
+            gap: 14px
+        }
+
+        .gal-item {
+            border-radius: var(--r);
+            overflow: hidden;
+            position: relative;
+            cursor: pointer
+        }
+
+        .gal-item.tall {
+            grid-row: span 2
+        }
+
+        .gal-item.wide {
+            grid-column: span 2
+        }
+
+        .gal-item img {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.55s ease
+        }
+
+        .gal-item:hover img {
+            transform: scale(1.07)
+        }
+
+        .gal-cap {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent 55%);
+            display: flex;
+            align-items: flex-end;
+            padding: 16px;
+            opacity: 0;
+            transition: opacity var(--tr)
+        }
+
+        .gal-item:hover .gal-cap {
+            opacity: 1
+        }
+
+        .gal-tag {
+            background: linear-gradient(135deg, var(--ac), var(--ac2));
+            color: #1a1200;
+            padding: 4px 12px;
+            border-radius: 99px;
+            font-size: 0.75rem;
+            font-weight: 700
+        }
+
+        [data-theme="lgbt"] .gal-tag {
+            background: linear-gradient(135deg, #e879f9, #a855f7);
+            color: #fff
+        }
+
+        .gal-item.hid {
+            display: none
+        }
+
+        /* ── TESTIMONIALS ────────────────────────────────── */
+        .testi {
+            padding: 100px 0;
+            background: var(--bg2);
+            overflow: hidden
+        }
+
+        .testi-wrap {
+            overflow: hidden
+        }
+
+        .testi-track {
+            display: flex;
+            gap: 22px;
+            transition: transform 0.4s ease;
+            will-change: transform;
+            cursor: grab
+        }
+
+        .testi-track:active {
+            cursor: grabbing
+        }
+
+        .testi-card {
+            background: var(--card);
+            border-radius: var(--r);
+            padding: 28px;
+            min-width: 320px;
+            flex-shrink: 0;
+            border: 1px solid var(--bo);
+            transition: transform var(--tr), box-shadow var(--tr)
+        }
+
+        .testi-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 36px var(--shadow)
+        }
+
+        .testi-q {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            line-height: 1;
+            color: var(--ac);
+            opacity: 0.4;
+            margin-bottom: -6px
+        }
+
+        .testi-stars {
+            display: flex;
+            gap: 3px;
+            margin-bottom: 14px;
+            color: #f59e0b
+        }
+
+        .testi-text {
+            color: var(--tx2);
+            font-size: 0.92rem;
+            line-height: 1.75;
+            margin-bottom: 20px
+        }
+
+        .testi-auth {
+            display: flex;
+            align-items: center;
+            gap: 12px
+        }
+
+        .testi-av {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--ac), var(--ac2));
+            color: #1a1200;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            flex-shrink: 0
+        }
+
+        [data-theme="lgbt"] .testi-av {
+            background: linear-gradient(135deg, #e879f9, #a855f7);
+            color: #fff
+        }
+
+        .testi-name {
+            font-weight: 600;
+            font-size: 0.93rem;
+            color: var(--tx)
+        }
+
+        .testi-evt {
+            font-size: 0.79rem;
+            color: var(--tx3)
+        }
+
+        .testi-nav {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin-top: 28px
+        }
+
+        .testi-nav-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--card);
+            border: 1.5px solid var(--bo);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--tx2);
+            transition: all var(--tr);
+            cursor: pointer
+        }
+
+        .testi-nav-btn:hover {
+            background: linear-gradient(135deg, var(--ac), var(--ac2));
+            color: #1a1200;
+            border-color: transparent
+        }
+
+        /* ── ENQUIRY ─────────────────────────────────────── */
+        .enquiry {
+            padding: 100px 0;
+            background: var(--bg)
+        }
+
+        .enq-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.35fr;
+            gap: 64px;
+            align-items: start
+        }
+
+        .enq-info p {
+            color: var(--tx2);
+            line-height: 1.8;
+            margin-bottom: 28px;
+            font-size: 1.02rem
+        }
+
+        .enq-contacts {
+            display: flex;
+            flex-direction: column;
+            gap: 14px
+        }
+
+        .enq-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 14px 18px;
+            border-radius: var(--r);
+            background: var(--card);
+            border: 1px solid var(--bo);
+            transition: all var(--tr);
+            color: var(--tx)
+        }
+
+        .enq-item:not(.no-click):hover {
+            border-color: rgba(var(--acr), 0.4);
+            transform: translateX(4px)
+        }
+
+        .enq-ico {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: rgba(var(--acr), 0.1);
+            color: var(--ac);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0
+        }
+
+        [data-theme="lgbt"] .enq-ico {
+            background: rgba(232, 121, 249, 0.1)
+        }
+
+        .enq-item-lbl {
+            font-size: 0.74rem;
+            color: var(--tx3);
+            display: block
+        }
+
+        .enq-item-val {
+            font-size: 0.88rem;
+            color: var(--tx);
+            font-weight: 500;
+            word-break: break-all
+        }
+
+        .enq-form-box {
+            background: var(--card);
+            border-radius: var(--r);
+            padding: 36px;
+            border: 1px solid var(--bo);
+            box-shadow: 0 8px 40px var(--shadow)
+        }
+
+        .enq-form-box h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: var(--tx)
+        }
+
+        .f-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px
+        }
+
+        .f-grp {
+            margin-bottom: 16px
+        }
+
+        .f-grp label {
+            display: block;
+            font-size: 0.83rem;
+            font-weight: 600;
+            color: var(--tx2);
+            margin-bottom: 7px
+        }
+
+        .f-success {
+            display: none;
+            text-align: center;
+            padding: 40px 20px
+        }
+
+        .f-success.show {
+            display: block
+        }
+
+        .f-success-ico {
+            font-size: 3rem;
+            margin-bottom: 12px
+        }
+
+        .f-success h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--tx);
+            margin-bottom: 10px
+        }
+
+        .f-success p {
+            color: var(--tx2);
+            margin-bottom: 24px
+        }
+
+        /* ── CONTACT ─────────────────────────────────────── */
+        .contact {
+            padding: 100px 0;
+            background: var(--bg2)
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 1fr;
+            gap: 44px;
+            align-items: start
+        }
+
+        .map-box {
+            height: 420px;
+            border-radius: var(--r);
+            overflow: hidden;
+            border: 1px solid var(--bo);
+            box-shadow: 0 8px 32px var(--shadow)
+        }
+
+        .map-box iframe {
+            width: 100%;
+            height: 100%;
+            border: none
+        }
+
+        .c-details {
+            display: flex;
+            flex-direction: column;
+            gap: 20px
+        }
+
+        .c-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px
+        }
+
+        .c-ico {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: rgba(var(--acr), 0.1);
+            color: var(--ac);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0
+        }
+
+        [data-theme="lgbt"] .c-ico {
+            background: rgba(232, 121, 249, 0.1)
+        }
+
+        .c-lbl {
+            font-size: 0.76rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--tx3);
+            font-weight: 600;
+            margin-bottom: 3px
+        }
+
+        .c-val {
+            font-size: 0.93rem;
+            color: var(--tx2);
+            line-height: 1.5
+        }
+
+        .c-val a {
+            color: var(--ac);
+            transition: opacity var(--tr)
+        }
+
+        .c-val a:hover {
+            opacity: 0.8
+        }
+
+        .c-socials {
+            display: flex;
+            gap: 10px;
+            margin-top: 6px
+        }
+
+        .c-soc {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            border: 1.5px solid var(--bo);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--tx2);
+            transition: all var(--tr)
+        }
+
+        .c-soc:hover {
+            border-color: var(--ac);
+            color: var(--ac);
+            background: rgba(var(--acr), 0.08)
+        }
+
+        /* ── FOOTER ──────────────────────────────────────── */
+        .footer {
+            background: var(--fb);
+            padding: 70px 0 0;
+            border-top: 1px solid var(--bo)
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.8fr 1fr 1fr 1.4fr;
+            gap: 40px;
+            margin-bottom: 52px
+        }
+
+        .footer-brand p {
+            color: var(--tx3);
+            font-size: 0.88rem;
+            line-height: 1.72;
+            margin: 14px 0 22px
+        }
+
+        .footer-socs {
+            display: flex;
+            gap: 10px
+        }
+
+        .footer-soc {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            border: 1px solid var(--bo);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--tx3);
+            transition: all var(--tr)
+        }
+
+        .footer-soc:hover {
+            border-color: var(--ac);
+            color: var(--ac);
+            transform: translateY(-2px)
+        }
+
+        .footer-col h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--tx);
+            margin-bottom: 18px
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 9px
+        }
+
+        .footer-links a {
+            font-size: 0.88rem;
+            color: var(--tx3);
+            transition: color var(--tr)
+        }
+
+        .footer-links a:hover {
+            color: var(--ac)
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            font-size: 0.86rem;
+            color: var(--tx3);
+            margin-bottom: 10px
+        }
+
+        .footer-contact-item svg {
+            color: var(--ac);
+            flex-shrink: 0
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--bo);
+            padding: 22px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px
+        }
+
+        .footer-bottom p {
+            font-size: 0.8rem;
+            color: var(--tx3)
+        }
+
+        /* ── RESPONSIVE ──────────────────────────────────── */
+        @media(max-width:1024px) {
+
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 40px
+            }
+
+            .about-imgs {
+                height: 360px
+            }
+
+            .svc-grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .why-grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .enq-grid {
+                grid-template-columns: 1fr;
+                gap: 40px
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 32px
+            }
+
+            .nav-wa,
+            .nav-call {
+                display: none
+            }
+        }
+
+        @media(max-width:768px) {
+
+            /* Nav */
+            .nav-links {
+                display: none
+            }
+
+            .nav-wa,
+            .nav-call {
+                display: none
+            }
+
+            .hbg {
+                display: flex
+            }
+
+            .nav.sc {
+                padding: 8px 0
+            }
+
+            .nav-inner {
+                padding: 0 16px
+            }
+
+            .nav-logo {
+                margin-right: 0
+            }
+
+            /* Sections */
+            .about,
+            .services,
+            .gallery,
+            .testi,
+            .enquiry,
+            .contact {
+                padding: 64px 0
+            }
+
+            .whyus {
+                padding: 56px 0
+            }
+
+            .footer {
+                padding: 52px 0 0
+            }
+
+            .container {
+                padding: 0 16px
+            }
+
+            /* Hero */
+            .hero {
+                min-height: 100vh;
+                min-height: calc(var(--vh)*100)
+            }
+
+            .hero-body {
+                padding: 90px 16px 60px
+            }
+
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 36px
+            }
+
+            .hero-btns .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center
+            }
+
+            .hero-stats {
+                gap: 20px
+            }
+
+            /* About */
+            .about-imgs {
+                height: 280px;
+                margin-bottom: 8px
+            }
+
+            .about-yrs {
+                width: 72px;
+                height: 72px;
+                right: -8px
+            }
+
+            .about-yrs-n {
+                font-size: 1.3rem
+            }
+
+            /* Services */
+            .svc-grid {
+                grid-template-columns: 1fr;
+                gap: 16px
+            }
+
+            /* Why */
+            .why-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 14px
+            }
+
+            .why-card {
+                padding: 22px 16px
+            }
+
+            /* Gallery */
+            .gal-grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-auto-rows: 160px;
+                gap: 10px
+            }
+
+            .gal-item.wide {
+                grid-column: span 1
+            }
+
+            .gal-item.tall {
+                grid-row: span 1
+            }
+
+            .gal-cap {
+                opacity: 1
+            }
+
+            /* Testimonials */
+            .testi-card {
+                min-width: calc(100vw - 56px)
+            }
+
+            /* Enquiry */
+            .enq-form-box {
+                padding: 22px 16px
+            }
+
+            .f-row {
+                grid-template-columns: 1fr
+            }
+
+            /* Contact */
+            .map-box {
+                height: 260px
+            }
+
+            /* Footer */
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 28px
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+                gap: 6px
+            }
+
+            /* Floating social */
+            .fsoc {
+                right: 10px;
+                gap: 8px
+            }
+
+            .fsoc-btn {
+                width: 42px;
+                height: 42px
+            }
+
+            .fsoc-btn::before {
+                display: none
+            }
+
+            /* Theme pill stays */
+            .sec-head {
+                margin-bottom: 36px
+            }
+
+            .sec-title {
+                font-size: clamp(1.7rem, 6vw, 2.2rem)
+            }
+        }
+
+        @media(max-width:480px) {
+            .container {
+                padding: 0 14px
+            }
+
+            .about-imgs {
+                height: 240px
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr
+            }
+
+            .gal-grid {
+                grid-template-columns: 1fr;
+                grid-auto-rows: 200px
+            }
+
+            .gal-item.tall {
+                grid-row: span 1
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr
+            }
+
+            .testi-card {
+                min-width: calc(100vw - 36px)
+            }
+
+            .hero-stats {
+                gap: 14px
+            }
+        }
+    </style>
+
+    <!-- ═══════════════ GALLERY ═══════════════ -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="sec-head reveal">
+                <div class="sec-tag">Our Work</div>
+                <h2 class="sec-title">Event <em>Gallery</em></h2>
+                <p class="sec-sub">A glimpse of the magic we create for our clients across Mysore and beyond.</p>
+            </div>
+            <div class="gal-filters">
+                <button class="gal-f on" onclick="filterGal('all',this)">All</button>
+                <button class="gal-f" onclick="filterGal('wedding',this)">Weddings</button>
+                <button class="gal-f" onclick="filterGal('corporate',this)">Corporate</button>
+                <button class="gal-f" onclick="filterGal('birthday',this)">Birthdays</button>
+                <button class="gal-f" onclick="filterGal('decor',this)">Décor</button>
+            </div>
+            <div class="gal-grid">
+                <div class="gal-item tall reveal" data-cat="wedding"><img
+                        src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600&auto=format&fit=crop&q=75"
+                        alt="Wedding" loading="lazy" />
+                    <div class="gal-cap"><span class="gal-tag">Wedding</span></div>
+                </div>
+                <div class="gal-item reveal" data-cat="corporate"><img
+                        src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=600&auto=format&fit=crop&q=75"
+                        alt="Corporate" loading="lazy" />
+                    <div class="gal-cap"><span class="gal-tag">Corporate</span></div>
+                </div>
+                <div class="gal-item reveal" data-cat="birthday"><img
+                        src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&auto=format&fit=crop&q=75"
+                        alt="Birthday" loading="lazy" />
+                    <div class="gal-cap"><span class="gal-tag">Birthday</span></div>
+                </div>
+                <div class="gal-item reveal" data-cat="decor"><img
+                        src="https://images.unsplash.com/photo-1478146059778-26028b07395a?w=600&auto=format&fit=crop&q=75"
+                        alt="Décor" loading="lazy" />
+                    <div class="gal-cap"><span class="gal-tag">Décor</span></div>
+                </div>
+                <div class="gal-item wide reveal" data-cat="wedding"><img
+                        src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=900&auto=format&fit=crop&q=75"
+                        alt="Grand Wedding" loading="lazy" />
+                    <div class="gal-cap"><span class="gal-tag">Grand Wedding</span></div>
+                </div>
+                <div class="gal-item reveal" data-cat="corporate"><img
+                        src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&auto=format&fit=crop&q=75"
+                        alt="Conference" loading="lazy" />
+                    <div class="gal-cap"><span class="gal-tag">Conference</span></div>
+                </div>
+                <div class="gal-item reveal" data-cat="birthday"><img
+                        src="https://images.unsplash.com/photo-1464349153735-7db50ed83c84?w=600&auto=format&fit=crop&q=75"
+                        alt="Celebration" loading="lazy" />
+                    <div class="gal-cap"><span class="gal-tag">Celebration</span></div>
+                </div>
+                <div class="gal-item tall reveal" data-cat="decor"><img
+                        src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&auto=format&fit=crop&q=75"
+                        alt="Stage" loading="lazy" />
+                    <div class="gal-cap"><span class="gal-tag">Stage Show</span></div>
+                </div>
+                <div class="gal-item reveal" data-cat="wedding"><img
+                        src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&auto=format&fit=crop&q=75"
+                        alt="Engagement" loading="lazy" />
+                    <div class="gal-cap"><span class="gal-tag">Engagement</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════ TESTIMONIALS ═══════════════ -->
+    <section class="testi" id="testi">
+        <div class="container">
+            <div class="sec-head reveal">
+                <div class="sec-tag">Client Reviews</div>
+                <h2 class="sec-title">Love from Our <em>Clients</em></h2>
+                <p class="sec-sub">Real stories from families and companies who trusted us with their most important
+                    moments.</p>
+            </div>
+            <div class="testi-wrap">
+                <div class="testi-track" id="testiTrack">
+                    <div class="testi-card">
+                        <div class="testi-q">"</div>
+                        <div class="testi-stars">★★★★★</div>
+                        <p class="testi-text">Dream Solutions made our wedding day absolutely magical. Every detail was
+                            perfect — from the floral arches to the lighting. Our guests are still talking about it
+                            months later!</p>
+                        <div class="testi-auth">
+                            <div class="testi-av">P</div>
+                            <div>
+                                <div class="testi-name">Priya &amp; Rohan Sharma</div>
+                                <div class="testi-evt">Wedding · November 2024</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testi-card">
+                        <div class="testi-q">"</div>
+                        <div class="testi-stars">★★★★★</div>
+                        <p class="testi-text">Our company's annual awards night was a massive success. The team managed
+                            everything seamlessly — stage, catering, entertainment. Truly professional from start to
+                            finish!</p>
+                        <div class="testi-auth">
+                            <div class="testi-av">A</div>
+                            <div>
+                                <div class="testi-name">Arun Krishnamurthy</div>
+                                <div class="testi-evt">Corporate Event · March 2024</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testi-card">
+                        <div class="testi-q">"</div>
+                        <div class="testi-stars">★★★★★</div>
+                        <p class="testi-text">My daughter's 18th birthday was beyond what I imagined. The balloon arch,
+                            the theme, the DJ — all stunning. Thank you Dream Solutions for making it unforgettable!</p>
+                        <div class="testi-auth">
+                            <div class="testi-av">S</div>
+                            <div>
+                                <div class="testi-name">Sunitha Gowda</div>
+                                <div class="testi-evt">Birthday Party · January 2025</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testi-card">
+                        <div class="testi-q">"</div>
+                        <div class="testi-stars">★★★★★</div>
+                        <p class="testi-text">Our 25th anniversary was intimate, romantic and perfectly organised.
+                            Personalised touches everywhere. Truly a memory we will cherish forever. 100% recommend!</p>
+                        <div class="testi-auth">
+                            <div class="testi-av">V</div>
+                            <div>
+                                <div class="testi-name">Vijay &amp; Meena Patel</div>
+                                <div class="testi-evt">Anniversary · December 2024</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testi-card">
+                        <div class="testi-q">"</div>
+                        <div class="testi-stars">★★★★★</div>
+                        <p class="testi-text">Product launch event — 200 guests, live streaming, AV setup — all handled
+                            flawlessly. Highly professional team. Will definitely work with them again!</p>
+                        <div class="testi-auth">
+                            <div class="testi-av">R</div>
+                            <div>
+                                <div class="testi-name">Rahul Nagaraj</div>
+                                <div class="testi-evt">Product Launch · February 2025</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testi-nav">
+                <button class="testi-nav-btn" id="tPrev" aria-label="Previous"><svg width="18" height="18"
+                        viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z" />
+                    </svg></button>
+                <button class="testi-nav-btn" id="tNext" aria-label="Next"><svg width="18" height="18"
+                        viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z" />
+                    </svg></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ENQUIRY FORM -->
+    <section class="enquiry" id="enquiry">
+        <div class="container">
+            <div class="enq-grid">
+                <div class="reveal">
+                    <div class="sec-tag">Let's Plan Together</div>
+                    <h2 class="sec-title">Ready to Create<br /><em>Something Magical?</em></h2>
+                    <p class="enq-info">Tell us about your dream event and we'll get back to you within 24 hours with a
+                        personalised plan.</p>
+                    <div class="enq-contacts">
+                        <a href="https://wa.me/919066906052" target="_blank" class="enq-item">
+                            <div class="enq-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                                    <path
+                                        d="M12 0C5.373 0 0 5.373 0 12c0 2.126.554 4.118 1.523 5.851L0 24l6.335-1.491A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.645-.52-5.148-1.422l-.369-.219-3.76.886.925-3.67-.24-.38A9.947 9.947 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
+                                </svg></div>
+                            <div><span class="enq-item-lbl">WhatsApp</span><span class="enq-item-val">+91 90669
+                                    06052</span></div>
+                        </a>
+                        <a href="tel:+919066906052" class="enq-item">
+                            <div class="enq-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" />
+                                </svg></div>
+                            <div><span class="enq-item-lbl">Call Us</span><span class="enq-item-val">+91 90669
+                                    06052</span></div>
+                        </a>
+                        <a href="mailto:dreamsolutions@gmail.com" class="enq-item">
+                            <div class="enq-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                                </svg></div>
+                            <div><span class="enq-item-lbl">Email</span><span
+                                    class="enq-item-val">dreamsolutions@gmail.com</span></div>
+                        </a>
+                        <a href="https://www.instagram.com/dreamsolutionsmysore/" target="_blank" class="enq-item">
+                            <div class="enq-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                                </svg></div>
+                            <div><span class="enq-item-lbl">Instagram</span><span
+                                    class="enq-item-val">@dreamsolutionsmysore</span></div>
+                        </a>
+                        <div class="enq-item no-click">
+                            <div class="enq-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                                </svg></div>
+                            <div><span class="enq-item-lbl">Location</span><span class="enq-item-val">Mysore, Karnataka,
+                                    India</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="enq-form-box reveal">
+                    <h3>Send an Enquiry</h3>
+                    <form id="enqForm" onsubmit="submitForm(event)">
+                        <div class="f-row">
+                            <div class="f-grp"><label>Your Name *</label><input type="text"
+                                    placeholder="e.g. Priya Sharma" required /></div>
+                            <div class="f-grp"><label>Phone *</label><input type="tel" placeholder="+91 XXXXX XXXXX"
+                                    required /></div>
+                        </div>
+                        <div class="f-grp"><label>Email</label><input type="email" placeholder="your@email.com" /></div>
+                        <div class="f-row">
+                            <div class="f-grp"><label>Event Type *</label>
+                                <select required>
+                                    <option value="" disabled selected>Select type</option>
+                                    <option>Wedding</option>
+                                    <option>Corporate Event</option>
+                                    <option>Birthday Party</option>
+                                    <option>Anniversary</option>
+                                    <option>Social Gathering</option>
+                                    <option>Theme Decoration</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <div class="f-grp"><label>Event Date</label><input type="date" /></div>
+                        </div>
+                        <div class="f-grp"><label>Expected Guests</label>
+                            <select>
+                                <option value="" disabled selected>Select count</option>
+                                <option>Upto 50</option>
+                                <option>50 – 150</option>
+                                <option>150 – 300</option>
+                                <option>300 – 500</option>
+                                <option>500+</option>
+                            </select>
+                        </div>
+                        <div class="f-grp"><label>Tell Us More</label><textarea
+                                placeholder="Describe your vision, theme, budget..."></textarea></div>
+                        <button type="submit" class="btn btn-p"
+                            style="width:100%;justify-content:center;font-size:1rem">
+                            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+                            </svg>Send Enquiry
+                        </button>
+                        <p style="text-align:center;font-size:0.76rem;color:var(--tx3);margin-top:12px">We reply within
+                            24 hours. Or reach us directly on WhatsApp.</p>
+                    </form>
+                    <div class="f-success" id="fSuccess">
+                        <div class="f-success-ico">🎉</div>
+                        <h3>Enquiry Received!</h3>
+                        <p>Thank you! We'll get back to you within 24 hours.</p>
+                        <a href="https://wa.me/919066906052" target="_blank" class="btn btn-p"
+                            style="justify-content:center">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                                <path
+                                    d="M12 0C5.373 0 0 5.373 0 12c0 2.126.554 4.118 1.523 5.851L0 24l6.335-1.491A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.645-.52-5.148-1.422l-.369-.219-3.76.886.925-3.67-.24-.38A9.947 9.947 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
+                            </svg>Chat on WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="sec-head reveal">
+                <div class="sec-tag">Find Us</div>
+                <h2 class="sec-title">Visit Us in <em>Mysore</em></h2>
+            </div>
+            <div class="contact-grid">
+                <div class="map-box reveal"><iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62372!2d76.6194!3d12.2958!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baf70381d572ef9%3A0x2b89ebb0488a0d0!2sMysuru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1680000000000"
+                        allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                        title="Dream Solutions Mysore"></iframe></div>
+                <div class="c-details reveal">
+                    <div class="c-item">
+                        <div class="c-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" />
+                            </svg></div>
+                        <div>
+                            <div class="c-lbl">Phone / WhatsApp</div>
+                            <div class="c-val"><a href="tel:+919066906052">+91 90669 06052</a></div>
+                        </div>
+                    </div>
+                    <div class="c-item">
+                        <div class="c-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                            </svg></div>
+                        <div>
+                            <div class="c-lbl">Email</div>
+                            <div class="c-val"><a href="mailto:dreamsolutions@gmail.com">dreamsolutions@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="c-item">
+                        <div class="c-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                            </svg></div>
+                        <div>
+                            <div class="c-lbl">Instagram</div>
+                            <div class="c-val"><a href="https://www.instagram.com/dreamsolutionsmysore/"
+                                    target="_blank">@dreamsolutionsmysore</a></div>
+                        </div>
+                    </div>
+                    <div class="c-item">
+                        <div class="c-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                            </svg></div>
+                        <div>
+                            <div class="c-lbl">Location</div>
+                            <div class="c-val">Mysore, Karnataka — 570001, India</div>
+                        </div>
+                    </div>
+                    <div class="c-item">
+                        <div class="c-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5z" />
+                            </svg></div>
+                        <div>
+                            <div class="c-lbl">Working Hours</div>
+                            <div class="c-val">Mon–Sat: 9:00 AM – 7:00 PM<br />Sunday: By Appointment</div>
+                        </div>
+                    </div>
+                    <div class="c-socials">
+                        <a href="https://wa.me/919066906052" target="_blank" class="c-soc" aria-label="WhatsApp"><svg
+                                width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                                <path
+                                    d="M12 0C5.373 0 0 5.373 0 12c0 2.126.554 4.118 1.523 5.851L0 24l6.335-1.491A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.645-.52-5.148-1.422l-.369-.219-3.76.886.925-3.67-.24-.38A9.947 9.947 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
+                            </svg></a>
+                        <a href="https://www.instagram.com/dreamsolutionsmysore/" target="_blank" class="c-soc"
+                            aria-label="Instagram"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                            </svg></a>
+                        <a href="tel:+919066906052" class="c-soc" aria-label="Call"><svg width="17" height="17"
+                                viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" />
+                            </svg></a>
+                        <a href="mailto:dreamsolutions@gmail.com" class="c-soc" aria-label="Email"><svg width="17"
+                                height="17" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                            </svg></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#hero"
+                        style="display:flex;align-items:center;gap:8px;font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:var(--tx)">
+                        <span style="color:var(--ac)">✦</span> Dream <span style="color:var(--ac)">Solutions</span>
+                    </a>
+                    <p>Turning Moments into Memories — Mysore's premier event management company crafting extraordinary
+                        experiences since 2016.</p>
+                    <div class="footer-socs">
+                        <a href="https://wa.me/919066906052" target="_blank" class="footer-soc"
+                            aria-label="WhatsApp"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                                <path
+                                    d="M12 0C5.373 0 0 5.373 0 12c0 2.126.554 4.118 1.523 5.851L0 24l6.335-1.491A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.645-.52-5.148-1.422l-.369-.219-3.76.886.925-3.67-.24-.38A9.947 9.947 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
+                            </svg></a>
+                        <a href="https://www.instagram.com/dreamsolutionsmysore/" target="_blank" class="footer-soc"
+                            aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                            </svg></a>
+                        <a href="mailto:dreamsolutions@gmail.com" class="footer-soc" aria-label="Email"><svg width="16"
+                                height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                            </svg></a>
+                        <a href="tel:+919066906052" class="footer-soc" aria-label="Call"><svg width="16" height="16"
+                                viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" />
+                            </svg></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#testi">Reviews</a></li>
+                        <li><a href="#enquiry">Get a Quote</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services">Wedding Planning</a></li>
+                        <li><a href="#services">Corporate Events</a></li>
+                        <li><a href="#services">Birthday Parties</a></li>
+                        <li><a href="#services">Social Gatherings</a></li>
+                        <li><a href="#services">Theme Decoration</a></li>
+                        <li><a href="#services">Entertainment Shows</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <div class="footer-contact-item"><svg width="14" height="14" viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <path
+                                d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" />
+                        </svg><a href="tel:+919066906052" style="color:var(--tx3)">+91 90669 06052</a></div>
+                    <div class="footer-contact-item"><svg width="14" height="14" viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <path
+                                d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                        </svg><a href="mailto:dreamsolutions@gmail.com"
+                            style="color:var(--tx3)">dreamsolutions@gmail.com</a></div>
+                    <div class="footer-contact-item"><svg width="14" height="14" viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <path
+                                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                        </svg>Mysore, Karnataka, India</div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Dream Solutions, Mysore. All rights reserved.</p>
+                <p>Designed with ❤️ for extraordinary moments.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ── THEME ────────────────────────────────────────
+        function setTheme(t) {
+            document.documentElement.setAttribute('data-theme', t);
+            localStorage.setItem('ds-theme', t);
+            document.querySelectorAll('.th-btn').forEach(b => b.classList.remove('on'));
+            const b = document.getElementById('b-' + t);
+            if (b) b.classList.add('on');
+        }
+        (function () { setTheme(localStorage.getItem('ds-theme') || 'dark') })();
+
+        // ── VIEWPORT HEIGHT FIX ──────────────────────────
+        function setVH() { document.documentElement.style.setProperty('--vh', window.innerHeight * 0.01 + 'px') }
+        setVH();
+        window.addEventListener('resize', setVH, { passive: true });
+
+        // ── NAVBAR SCROLL ────────────────────────────────
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => nav.classList.toggle('sc', window.scrollY > 50), { passive: true });
+
+        // ── MOBILE NAV ───────────────────────────────────
+        function toggleNav() {
+            const m = document.getElementById('navMob'), h = document.getElementById('hbg');
+            const open = m.classList.toggle('open');
+            h.classList.toggle('open', open);
+            h.setAttribute('aria-expanded', String(open));
+            document.body.style.overflow = open ? 'hidden' : '';
+        }
+        function closeNav() {
+            document.getElementById('navMob').classList.remove('open');
+            document.getElementById('hbg').classList.remove('open');
+            document.getElementById('hbg').setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        }
+        document.addEventListener('click', e => {
+            const m = document.getElementById('navMob');
+            if (m.classList.contains('open') && !nav.contains(e.target)) closeNav();
+        });
+
+        // ── SMOOTH SCROLL ────────────────────────────────
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', function (e) {
+                const h = this.getAttribute('href');
+                if (h === '#') return;
+                const t = document.querySelector(h);
+                if (!t) return;
+                e.preventDefault();
+                const off = window.innerWidth <= 768 ? 64 : 72;
+                window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - off, behavior: 'smooth' });
+            });
+        });
+
+        // ── ACTIVE NAV LINK ──────────────────────────────
+        const navLinks = document.querySelectorAll('.nav-link');
+        function updateActive() {
+            const y = window.scrollY + 80;
+            document.querySelectorAll('section[id]').forEach(s => {
+                const l = document.querySelector(`.nav-link[href="#${s.id}"]`);
+                if (l && y >= s.offsetTop && y < s.offsetTop + s.offsetHeight) {
+                    navLinks.forEach(x => x.classList.remove('on'));
+                    l.classList.add('on');
+                }
+            });
+        }
+        window.addEventListener('scroll', updateActive, { passive: true });
+
+        // ── SCROLL REVEAL ────────────────────────────────
+        new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); observer.unobserve(e.target) } });
+        }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' }).observe;
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on') } });
+        }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // ── HERO PARALLAX (desktop only) ─────────────────
+        const bg = document.getElementById('heroBg');
+        if (bg) {
+            bg.style.backgroundImage = "url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1600&auto=format&fit=crop&q=80')";
+            bg.style.backgroundSize = 'cover';
+            bg.style.backgroundPosition = 'center';
+            if (window.innerWidth > 768) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY < window.innerHeight)
+                        bg.style.transform = `scale(1.06) translateY(${window.scrollY * 0.22}px)`;
+                }, { passive: true });
+            }
+        }
+
+        // ── GALLERY FILTER ───────────────────────────────
+        function filterGal(cat, btn) {
+            document.querySelectorAll('.gal-f').forEach(b => b.classList.remove('on'));
+            btn.classList.add('on');
+            document.querySelectorAll('.gal-item').forEach(item => {
+                const show = cat === 'all' || item.dataset.cat === cat;
+                item.classList.toggle('hid', !show);
+            });
+        }
+
+        // ── TESTIMONIALS CAROUSEL ───────────────────────
+        (function () {
+            const track = document.getElementById('testiTrack');
+            if (!track) return;
+            let cur = 0, startX = 0, dragging = false;
+            const cards = track.querySelectorAll('.testi-card');
+            function cardW() { return cards[0] ? (cards[0].offsetWidth + 22) : 342 }
+            function goTo(i) {
+                cur = Math.max(0, Math.min(i, cards.length - 1));
+                track.style.transform = `translateX(-${cur * cardW()}px)`;
+            }
+            document.getElementById('tPrev').onclick = () => goTo(cur - 1);
+            document.getElementById('tNext').onclick = () => goTo(cur + 1);
+            track.addEventListener('mousedown', e => { startX = e.clientX; dragging = true }, { passive: true });
+            window.addEventListener('mouseup', e => { if (!dragging) return; if (Math.abs(startX - e.clientX) > 50) goTo(startX > e.clientX ? cur + 1 : cur - 1); dragging = false });
+            track.addEventListener('touchstart', e => { startX = e.touches[0].clientX }, { passive: true });
+            track.addEventListener('touchend', e => { const d = startX - e.changedTouches[0].clientX; if (Math.abs(d) > 50) goTo(d > 0 ? cur + 1 : cur - 1) }, { passive: true });
+            window.addEventListener('resize', () => goTo(cur), { passive: true });
+        })();
+
+        // ── ENQUIRY FORM ─────────────────────────────────
+        function submitForm(e) {
+            e.preventDefault();
+            document.getElementById('enqForm').style.display = 'none';
+            document.getElementById('fSuccess').classList.add('show');
+        }
+    </script>
+</body>
+
+</html>
